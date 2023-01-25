@@ -90,6 +90,9 @@ public class TragosRestContoller {
 		}
 		try {
 			tragoActual.setNombre_trago(trago.getNombre_trago());
+			tragoActual.setTipo_trago(trago.getTipo_trago());
+			tragoActual.setEstado_trago(trago.getEstado_trago());
+			tragoActual.setValor_trago(trago.getValor_trago());
 			
 			tragoUpdate = tragosService.save(tragoActual);
 		}catch (DataAccessException e) {
