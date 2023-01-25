@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.demo.models.entity.Tragos;
 
-public interface TragosService {
+public interface ITragosService {
 	
 	public List<Tragos> findAll();
 	

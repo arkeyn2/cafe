@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.demo.model.dao.ITragoDao;
 import com.example.demo.models.entity.Tragos;
 
-public class TraglsServiceImpl implements TragosService  {
+public class TraglsServiceImpl implements ITragosService  {
 	
 	@Autowired
 	private ITragoDao tragoDao;

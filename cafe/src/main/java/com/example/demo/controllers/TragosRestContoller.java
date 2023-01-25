@@ -19,15 +19,15 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.models.entity.Tragos;
-import com.example.demo.models.services.TragosService;
+import com.example.demo.models.services.ITragosService;
 
-@CrossOrigin(origins ={"http://loalhost:4200","*"})
-@RestController
-@RequestMapping("/api")
+//@CrossOrigin(origins ={"http://loalhost:4200","*"})
+//@RestController
+//@RequestMapping("/api")
 public class TragosRestContoller {
-	
+	/*
 	@Autowired
-	private TragosService tragosService;
+	private ITragosService tragosService;
 	
 	@GetMapping("/tragos")
 	public List<Tragos>index(){
@@ -120,5 +120,5 @@ public class TragosRestContoller {
 
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
-	
+	*/
 }
