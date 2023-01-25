@@ -9,9 +9,13 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.models.entity.Tragos;
@@ -49,5 +53,69 @@ public class TragosRestContoller {
 		}
 		return new ResponseEntity<Tragos>(trago, HttpStatus.OK);
 	}
+	
+	@PostMapping("/tragos")
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<?> create (@RequestBody Tragos trago){
+	
+		Tragos tragonew =null;
+		Map<String, Object> response = new HashMap<>();
+		
+		try {
+			tragonew = tragosService.save(trago);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar el insert en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		response.put("mensaje", "El trago ha sido creado con exito!");
+		response.put("trago", tragonew);
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
+	}
+	
+	@PostMapping("/tragos/{id}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<?> update(@RequestBody Tragos trago, @PathVariable Long id ){
+	
+		Tragos tragoActual =tragosService.findById(id);
+		
+		Tragos tragoUpdate =null;
+		
+		Map<String, Object> response = new HashMap<>();
+		
+		if (trago == null) {
+			response.put("mensaje", "El tipo Id:" .concat(id.toString().concat(" no existe en la base de datos!")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		
+		}
+		try {
+			tragoActual.setNombre_trago(trago.getNombre_trago());
+			
+			tragoUpdate = tragosService.save(tragoActual);
+		}catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar actualizado en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+	
+		}
+		response.put("mensaje", "El trago ha sido actualizado con exito!");
+		response.put("trago", tragoUpdate);
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
+	}
+	
+	@DeleteMapping("/tragos/{id}")
+	public ResponseEntity<?> delete(@PathVariable Long id) {
+		Map<String, Object> response = new HashMap<>();
+		try {
+			tragosService.delete(id);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al eliminar en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		response.put("mensaje", "El trago eliminada con exito!");
 
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
+	}
+	
 }
