@@ -5,15 +5,17 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.model.dao.ITragoDao;
+import com.example.demo.model.dao.ITragosDao;
 import com.example.demo.models.entity.Tragos;
 
-public class TraglsServiceImpl implements ITragosService  {
+@Service
+public class TragosServiceImpl implements ITragosService  {
 	
 	@Autowired
-	private ITragoDao tragoDao;
+	private ITragosDao tragoDao;
 
 	@Override
 	@Transactional(readOnly = true)

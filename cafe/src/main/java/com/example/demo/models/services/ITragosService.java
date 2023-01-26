@@ -10,7 +10,7 @@ public interface ITragosService {
 	
 	public Tragos findById(Long id);
 	
-	public Tragos save(Tragos tragos);
+	public Tragos save(Tragos trago);
 	
 	public void delete(Long id);
 

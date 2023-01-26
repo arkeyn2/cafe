@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.example.demo.models.entity.Tragos;
 
-public interface ITragoDao extends CrudRepository<Tragos , Long>{
+public interface ITragosDao extends CrudRepository<Tragos , Long>{
 
 }
