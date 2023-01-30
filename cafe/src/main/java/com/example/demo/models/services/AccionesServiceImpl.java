@@ -3,11 +3,12 @@ package com.example.demo.models.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.dao.IAccionesDao;
 import com.example.demo.models.entity.Acciones;
-
+@Service
 public class AccionesServiceImpl implements IAccionesService {
 	
 	@Autowired
