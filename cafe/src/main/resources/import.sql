@@ -6,6 +6,7 @@ INSERT INTO public.usuario(apellido, email, nombre, nombre_usuario, password, ru
 	
 INSERT INTO public.usuario(apellido, email, nombre, nombre_usuario, password, rut) VALUES ('trabajador', 'u@u.u', 'trabajador', 'trabajador','$2a$10$GrxgW1ydycwaoNGdMWrykulnU8w90ay2oS/p4G60mkMx3hbJRlNfC', '98765432');
 
+
 INSERT INTO public.usuario_rol(	usuario_id, rol_id)	VALUES (1, 1);
 INSERT INTO public.usuario_rol(	usuario_id, rol_id)	VALUES (2, 3);
 INSERT INTO public.usuario_rol(	usuario_id, rol_id)	VALUES (3, 2);

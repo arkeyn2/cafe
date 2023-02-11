@@ -19,6 +19,8 @@ public class NuevoUsuario {
     private String password;
 
     private Set<String> roles;
+    
+    private String tipo;
 
     public String getNombre() {
         return nombre;
@@ -75,5 +77,13 @@ public class NuevoUsuario {
     public void setRoles(Set<String> roles) {
         this.roles = roles;
     }
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
     
 }

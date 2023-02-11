@@ -42,6 +42,9 @@ public class Usuario {
 
     @NotNull
     private String password;
+    
+    @NotNull
+    private String tipo;
 
     @NotNull
     @ManyToMany
@@ -51,13 +54,14 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(@NotNull String nombre, @NotNull String nombreUsuario, @NotNull String email, @NotNull String password,@NotNull String apellido,@NotNull String rut) {
+    public Usuario(@NotNull String nombre, @NotNull String nombreUsuario, @NotNull String email, @NotNull String password,@NotNull String tipo,@NotNull String apellido,@NotNull String rut) {
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.password = password;
         this.apellido = apellido;
         this.rut = rut;
+        this.tipo = tipo;
 
     }
 
@@ -125,6 +129,14 @@ public class Usuario {
     public void setRoles(Set<Rol> roles) {
         this.roles = roles;
     }
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
     
 }

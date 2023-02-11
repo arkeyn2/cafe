@@ -119,6 +119,10 @@ public class UsuarioRestController {
 			usuarioActual.setNombre(usuario.getNombre());
 			usuarioActual.setEmail(usuario.getEmail());
 			usuarioActual.setRut(usuario.getRut());
+			usuarioActual.setTipo(usuario.getTipo());
+			usuarioActual.setNombreUsuario(usuario.getNombreUsuario());
+			usuarioActual.setPassword(usuario.getPassword());
+			usuarioActual.setRoles(usuario.getRoles());
 
 			usuarioUpdate = usuarioService.save(usuarioActual);
 
