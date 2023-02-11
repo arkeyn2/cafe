@@ -103,7 +103,8 @@ public class AccionesRestController {
 			accionesActual.setUsario(acciones.getUsario());
 			accionesActual.setTipo_accion(acciones.getTipo_accion());
 			accionesActual.setPendiente(acciones.getPendiente());
-
+			accionesActual.setEstado(acciones.getEstado());
+			
 			accionesUpdate = accionesService.save(accionesActual);
 
 		} catch (DataAccessException e) {

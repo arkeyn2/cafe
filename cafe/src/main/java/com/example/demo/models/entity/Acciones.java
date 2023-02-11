@@ -33,6 +33,9 @@ public class Acciones implements Serializable {
 	@Column(nullable = false)
 	private String pendiente;
 	
+	@Column(nullable = false)
+	private String estado;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Servicios servicio;
@@ -112,6 +115,15 @@ public class Acciones implements Serializable {
 
 	public void setPendiente(String pendiente) {
 		this.pendiente = pendiente;
+	}
+
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 
