@@ -21,9 +21,10 @@ public class UsuarioPrincipal implements UserDetails {
     private String nombreUsuario;
     private String email;
     private String password;
+    private String tipo;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UsuarioPrincipal(Long id, String nombre, String nombreUsuario, String email, String password, String apellido, String rut, Collection<? extends GrantedAuthority> authorities) {
+    public UsuarioPrincipal(Long id, String nombre, String nombreUsuario, String email, String password, String apellido,String tipo, String rut, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -38,7 +39,7 @@ public class UsuarioPrincipal implements UserDetails {
     public static UsuarioPrincipal build(Usuario usuario){
         List<GrantedAuthority> authorities =
                 usuario.getRoles().stream().map(rol -> new SimpleGrantedAuthority(rol.getRolNombre().name())).collect(Collectors.toList());
-        return new UsuarioPrincipal(usuario.getId(), usuario.getNombre(), usuario.getNombreUsuario(), usuario.getEmail(), usuario.getPassword(),usuario.getApellido(),usuario.getRut(), authorities);
+        return new UsuarioPrincipal(usuario.getId(), usuario.getNombre(), usuario.getNombreUsuario(), usuario.getEmail(), usuario.getPassword(),usuario.getApellido(),usuario.getRut(),usuario.getTipo(), authorities);
     }
 
     public Long getId() {
@@ -95,4 +96,5 @@ public class UsuarioPrincipal implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+    
 }
