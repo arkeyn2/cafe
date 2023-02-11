@@ -101,6 +101,8 @@ public class AccionesRestController {
 			accionesActual.setServicio(acciones.getServicio());
 			accionesActual.setTragos(acciones.getTragos());
 			accionesActual.setUsario(acciones.getUsario());
+			accionesActual.setTipo_accion(acciones.getTipo_accion());
+			accionesActual.setPendiente(acciones.getPendiente());
 
 			accionesUpdate = accionesService.save(accionesActual);
 

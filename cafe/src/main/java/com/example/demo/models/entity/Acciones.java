@@ -26,7 +26,13 @@ public class Acciones implements Serializable {
 
 	@Column(nullable = false)
 	private String total_ganado;
+	
+	@Column(nullable = false)
+	private String tipo_accion;
 
+	@Column(nullable = false)
+	private String pendiente;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Servicios servicio;
@@ -90,6 +96,24 @@ public class Acciones implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	
+	public String getTipo_accion() {
+		return tipo_accion;
+	}
+
+	public void setTipo_accion(String tipo_accion) {
+		this.tipo_accion = tipo_accion;
+	}
+
+	public String getPendiente() {
+		return pendiente;
+	}
+
+	public void setPendiente(String pendiente) {
+		this.pendiente = pendiente;
+	}
+
 
 	private static final long serialVersionUID = 1L;
 
