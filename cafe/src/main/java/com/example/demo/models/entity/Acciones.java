@@ -31,7 +31,7 @@ public class Acciones implements Serializable {
 	private String tipo_accion;
 
 	@Column(nullable = false)
-	private String pendiente;
+	private String estado_de_pago;
 	
 	@Column(nullable = false)
 	private String estado;
@@ -110,11 +110,11 @@ public class Acciones implements Serializable {
 	}
 
 	public String getPendiente() {
-		return pendiente;
+		return estado_de_pago;
 	}
 
-	public void setPendiente(String pendiente) {
-		this.pendiente = pendiente;
+	public void setPendiente(String estado_de_pago) {
+		this.estado_de_pago = estado_de_pago;
 	}
 
 
