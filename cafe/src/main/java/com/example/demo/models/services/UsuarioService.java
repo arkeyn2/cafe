@@ -64,6 +64,10 @@ public class UsuarioService implements IUsuarioService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public List<Usuario> findTraeChica(String tipo) {
+		return usuarioDao.findTraeChica(tipo);
+	}
 
     
 }

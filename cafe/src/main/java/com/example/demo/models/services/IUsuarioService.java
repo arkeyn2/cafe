@@ -15,5 +15,7 @@ public interface IUsuarioService {
 	public void delete(Long id);
 
 	public List<Usuario> findByRolId(Long roles_id);
+	
+	public List<Usuario> findTraeChica(String tipo);
 
 }

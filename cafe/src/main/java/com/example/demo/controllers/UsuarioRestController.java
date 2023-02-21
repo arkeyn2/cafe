@@ -150,4 +150,25 @@ public class UsuarioRestController {
 
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
+	
+	@GetMapping("/usuarios/buscausuario/{tipo}")
+	public ResponseEntity<?> findTraeChica(@PathVariable String tipo) {
+
+		List<Usuario> usuario = null;
+		Map<String, Object> response = new HashMap<>();
+		
+		try {
+			usuario = usuarioService.findTraeChica(tipo);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar la consulta en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+
+		if (usuario == null) {
+			response.put("mensaje", "La reserva Id:".concat(tipo.toString().concat(" no existe en la base de datos!")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<List<Usuario>>(usuario, HttpStatus.OK);
+	}
 }
