@@ -25,6 +25,8 @@ public class Servicios implements Serializable {
 	private String detalle_servicio;
 
 	private String estado_Servicio;
+	
+	private String metodo_pago;
 
 	public Long getId() {
 		return id;
@@ -64,6 +66,16 @@ public class Servicios implements Serializable {
 
 	public void setEstado_Servicio(String destado_Servicio) {
 		this.estado_Servicio = destado_Servicio;
+	}
+
+	
+	
+	public String getMetodo_pago() {
+		return metodo_pago;
+	}
+
+	public void setMetodo_pago(String metodo_pago) {
+		this.metodo_pago = metodo_pago;
 	}
 
 	public static long getSerialversionuid() {

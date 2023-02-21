@@ -98,6 +98,7 @@ public class ServicioRestController {
 			servicioActual.setTipo_servicio(servicio.getTipo_servicio());
 			servicioActual.setDetalle_servicio(servicio.getDetalle_servicio());
 			servicioActual.setEstado_Servicio(servicio.getEstado_Servicio());
+			servicioActual.setMetodo_pago(servicio.getMetodo_pago());
 
 			servicioUpdate = servicioService.save(servicioActual);
 
