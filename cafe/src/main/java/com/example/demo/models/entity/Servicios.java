@@ -31,6 +31,8 @@ public class Servicios implements Serializable {
 	private String valor;
 
 	private String iva;
+	
+	private String pieza;
 
 	public Long getId() {
 		return id;
@@ -99,6 +101,16 @@ public class Servicios implements Serializable {
 	public void setIva(String iva) {
 		this.iva = iva;
 	}
+	
+
+	public String getPieza() {
+		return pieza;
+	}
+
+	public void setPieza(String pieza) {
+		this.pieza = pieza;
+	}
+
 
 	private static final long serialVersionUID = 1L;
 
