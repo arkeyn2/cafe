@@ -131,4 +131,25 @@ public class AccionesRestController {
 
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
+	
+	@GetMapping("/acciones/tragos/{id}")
+	public ResponseEntity<?> chicaportrago(@PathVariable Long id) {
+
+		List<Acciones> accion = null;
+		Map<String, Object> response = new HashMap<>();
+
+		try {
+			accion = accionesService.chicaportrago(id);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar la consulta en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+
+		if (accion == null) {
+			response.put("mensaje", "La reserva Id:".concat(id.toString().concat(" no existe en la base de datos!")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<List<Acciones>>(accion, HttpStatus.OK);
+	}
 }

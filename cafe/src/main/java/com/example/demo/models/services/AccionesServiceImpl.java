@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.dao.IAccionesDao;
 import com.example.demo.models.entity.Acciones;
+
 @Service
 public class AccionesServiceImpl implements IAccionesService {
 	
@@ -34,4 +35,9 @@ public class AccionesServiceImpl implements IAccionesService {
 	public void delete(Long id) {
 		accionDao.deleteById(id);
 	}
+	
+	@Override
+	public List<Acciones> chicaportrago(long id) {
+		return accionDao.chicaportrago(id);
+}
 }

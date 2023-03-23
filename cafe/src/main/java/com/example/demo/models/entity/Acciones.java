@@ -1,6 +1,7 @@
 package com.example.demo.models.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -21,8 +24,8 @@ public class Acciones implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@Column(nullable = false)
-	private String fecha_dia;
+	@Temporal(TemporalType.DATE)
+	private Date fecha_dia;
 
 	@Column(nullable = false)
 	private String total_ganado;
@@ -42,7 +45,7 @@ public class Acciones implements Serializable {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	private Usuario usario;
+	private Usuario usuario;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
@@ -56,11 +59,11 @@ public class Acciones implements Serializable {
 		this.id = id;
 	}
 
-	public String getFecha_dia() {
+	public Date getFecha_dia() {
 		return fecha_dia;
 	}
 
-	public void setFecha_dia(String fecha_dia) {
+	public void setFecha_dia(Date fecha_dia) {
 		this.fecha_dia = fecha_dia;
 	}
 
@@ -81,11 +84,11 @@ public class Acciones implements Serializable {
 	}
 
 	public Usuario getUsario() {
-		return usario;
+		return usuario;
 	}
 
 	public void setUsario(Usuario usario) {
-		this.usario = usario;
+		this.usuario = usario;
 	}
 
 	public Tragos getTragos() {

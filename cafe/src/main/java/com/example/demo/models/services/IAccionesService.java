@@ -13,5 +13,8 @@ public interface IAccionesService {
 	public Acciones save(Acciones accion);
 	
 	public void delete(Long id);
+	
+	public List<Acciones> chicaportrago(long id); 
+
 
 }
