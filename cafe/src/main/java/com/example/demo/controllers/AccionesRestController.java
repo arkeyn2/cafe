@@ -1,5 +1,7 @@
 package com.example.demo.controllers;
 
+import java.text.ParseException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -147,7 +149,28 @@ public class AccionesRestController {
 		}
 
 		if (accion == null) {
-			response.put("mensaje", "La reserva Id:".concat(id.toString().concat(" no existe en la base de datos!")));
+			response.put("mensaje", "La accion Id:".concat(id.toString().concat(" no existe en la base de datos!")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<List<Acciones>>(accion, HttpStatus.OK);
+	}
+	
+	@GetMapping("/acciones/dia/{id}/{fecha}")
+	public ResponseEntity<?> chicaporfecha(@PathVariable Long id,@PathVariable String fecha)throws ParseException {
+
+		List<Acciones> accion = null;
+		Map<String, Object> response = new HashMap<>();
+
+		try {
+			accion = accionesService.chicaporfecha(id,fecha);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar la consulta en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+
+		if (accion == null) {
+			response.put("mensaje", "La accion Id:".concat(id.toString().concat(" no existe en la base de datos!")));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<List<Acciones>>(accion, HttpStatus.OK);

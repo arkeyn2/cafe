@@ -1,5 +1,6 @@
 package com.example.demo.models.services;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,11 @@ public class AccionesServiceImpl implements IAccionesService {
 	@Override
 	public List<Acciones> chicaportrago(long id) {
 		return accionDao.chicaportrago(id);
+		
+		
 }
+	@Override
+	public List<Acciones> chicaporfecha(long id , String fecha) {
+		return accionDao.chicaporfecha(id,fecha);
+	}
 }

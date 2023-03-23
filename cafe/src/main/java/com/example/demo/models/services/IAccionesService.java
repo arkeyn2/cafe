@@ -1,5 +1,6 @@
 package com.example.demo.models.services;
 
+import java.util.Date;
 import java.util.List;
 
 import com.example.demo.models.entity.Acciones;
@@ -15,6 +16,8 @@ public interface IAccionesService {
 	public void delete(Long id);
 	
 	public List<Acciones> chicaportrago(long id); 
+	
+	public List<Acciones> chicaporfecha(long id,String fecha); 
 
 
 }
