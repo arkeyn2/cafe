@@ -154,7 +154,7 @@ public class UsuarioRestController {
 	@GetMapping("/usuarios/buscausuario/{tipo}")
 	public ResponseEntity<?> findTraeChica(@PathVariable String tipo) {
 
-		List<Usuario> usuario = null;
+		List<Usuario>usuario = null;
 		Map<String, Object> response = new HashMap<>();
 		
 		try {

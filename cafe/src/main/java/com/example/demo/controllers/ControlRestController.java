@@ -99,6 +99,7 @@ public class ControlRestController {
 			controlActual.setHorarios(control.getHorarios());
 			controlActual.setTotal_horaextra(control.getTotal_horaextra());
 			controlActual.setUsuario(control.getUsuario());
+			controlActual.setFecha(control.getFecha());
 
 			controlUpdate = controlService.save(controlActual);
 

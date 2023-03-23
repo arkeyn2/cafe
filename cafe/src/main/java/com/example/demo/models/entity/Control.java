@@ -27,6 +27,8 @@ public class Control implements Serializable {
 	private String hora_entrada;
 
 	private String total_horaextra;
+	
+	private String fecha;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
@@ -82,6 +84,15 @@ public class Control implements Serializable {
 
 	public void setHorarios(Horarios horarios) {
 		this.horarios = horarios;
+	}
+	
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
 	}
 
 	public static long getSerialversionuid() {
