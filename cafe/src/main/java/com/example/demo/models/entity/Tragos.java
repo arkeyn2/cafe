@@ -27,6 +27,10 @@ public class Tragos implements Serializable {
 
 	@Column(nullable = false)
 	private String valor_trago;
+	
+	private String iva;
+	
+	private String metodo_pago;
 
 	public long getId() {
 		return id;
@@ -67,6 +71,24 @@ public class Tragos implements Serializable {
 	public void setValor_trago(String valor_trago) {
 		this.valor_trago = valor_trago;
 	}
+
+	public String getIva() {
+		return iva;
+	}
+
+	public void setIva(String iva) {
+		this.iva = iva;
+	}
+
+	public String getMetodo_pago() {
+		return metodo_pago;
+	}
+
+	public void setMetodo_pago(String metodo_pago) {
+		this.metodo_pago = metodo_pago;
+	}
+
+
 
 	private static final long serialVersionUID = 1L;
 

@@ -25,8 +25,12 @@ public class Servicios implements Serializable {
 	private String detalle_servicio;
 
 	private String estado_Servicio;
-	
+
 	private String metodo_pago;
+
+	private String valor;
+
+	private String iva;
 
 	public Long getId() {
 		return id;
@@ -68,8 +72,6 @@ public class Servicios implements Serializable {
 		this.estado_Servicio = destado_Servicio;
 	}
 
-	
-	
 	public String getMetodo_pago() {
 		return metodo_pago;
 	}
@@ -80,6 +82,22 @@ public class Servicios implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getValor() {
+		return valor;
+	}
+
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
+
+	public String getIva() {
+		return iva;
+	}
+
+	public void setIva(String iva) {
+		this.iva = iva;
 	}
 
 	private static final long serialVersionUID = 1L;

@@ -93,6 +93,8 @@ public class TragosRestContoller {
 			tragoActual.setTipo_trago(trago.getTipo_trago());
 			tragoActual.setEstado_trago(trago.getEstado_trago());
 			tragoActual.setValor_trago(trago.getValor_trago());
+			tragoActual.setIva(trago.getIva());
+			tragoActual.setMetodo_pago(trago.getMetodo_pago());
 			
 			tragoUpdate = tragosService.save(tragoActual);
 		}catch (DataAccessException e) {
