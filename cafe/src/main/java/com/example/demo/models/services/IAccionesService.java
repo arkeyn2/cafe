@@ -18,6 +18,8 @@ public interface IAccionesService {
 	public List<Acciones> chicaportrago(long id); 
 	
 	public List<Acciones> chicaporfecha(long id,String fecha); 
+	
+	public List<Acciones> fechainformes(Date fecha1,Date fecha2); 
 
 
 }
