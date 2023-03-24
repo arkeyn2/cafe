@@ -102,10 +102,12 @@ public class AccionesRestController {
 			accionesActual.setTotal_ganado(acciones.getTotal_ganado());
 			accionesActual.setServicio(acciones.getServicio());
 			accionesActual.setTragos(acciones.getTragos());
-			accionesActual.setUsario(acciones.getUsario());
+			accionesActual.setUsuario(acciones.getUsuario());
 			accionesActual.setTipo_accion(acciones.getTipo_accion());
 			accionesActual.setPendiente(acciones.getPendiente());
 			accionesActual.setEstado(acciones.getEstado());
+			accionesActual.setAdelanto(acciones.getAdelanto());
+			accionesActual.setComisiones(acciones.getComisiones());
 			
 			accionesUpdate = accionesService.save(accionesActual);
 

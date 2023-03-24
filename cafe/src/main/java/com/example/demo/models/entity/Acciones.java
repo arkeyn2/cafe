@@ -39,6 +39,10 @@ public class Acciones implements Serializable {
 	@Column(nullable = false)
 	private String estado;
 	
+	private String adelanto;
+	
+	private String comisiones;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Servicios servicio;
@@ -83,12 +87,12 @@ public class Acciones implements Serializable {
 		this.servicio = servicio;
 	}
 
-	public Usuario getUsario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsario(Usuario usario) {
-		this.usuario = usario;
+	public void setUsario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	public Tragos getTragos() {
@@ -128,6 +132,37 @@ public class Acciones implements Serializable {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+
+	
+
+	public String getEstado_de_pago() {
+		return estado_de_pago;
+	}
+
+	public void setEstado_de_pago(String estado_de_pago) {
+		this.estado_de_pago = estado_de_pago;
+	}
+
+	public String getAdelanto() {
+		return adelanto;
+	}
+
+	public void setAdelanto(String adelanto) {
+		this.adelanto = adelanto;
+	}
+
+	public String getComisiones() {
+		return comisiones;
+	}
+
+	public void setComisiones(String comisiones) {
+		this.comisiones = comisiones;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 
 
 	private static final long serialVersionUID = 1L;
