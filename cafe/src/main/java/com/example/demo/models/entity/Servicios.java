@@ -30,6 +30,8 @@ public class Servicios implements Serializable {
 
 	private String valor;
 
+	private String valor_servicio;
+
 	private String iva;
 	
 	private String pieza;
@@ -111,6 +113,14 @@ public class Servicios implements Serializable {
 		this.pieza = pieza;
 	}
 
+	
+	public String getValor_servicio() {
+		return valor_servicio;
+	}
+
+	public void setValor_servicio(String valor_servicio) {
+		this.valor_servicio = valor_servicio;
+	}
 
 	private static final long serialVersionUID = 1L;
 

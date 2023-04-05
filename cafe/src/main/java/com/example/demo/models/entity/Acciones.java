@@ -1,7 +1,7 @@
 package com.example.demo.models.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,8 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -43,12 +41,6 @@ public class Acciones implements Serializable {
 	
 	private String comisiones;
 	
-	private String servicio_id;
-	
-	private String tragos_id;
-	
-	private String usuario_id;
-	/*
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Servicios servicio;
@@ -60,7 +52,7 @@ public class Acciones implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Tragos tragos;
-*/
+
 	public long getId() {
 		return id;
 	}
@@ -84,7 +76,7 @@ public class Acciones implements Serializable {
 	public void setTotal_ganado(String total_ganado) {
 		this.total_ganado = total_ganado;
 	}
-/*
+
 	public Servicios getServicio() {
 		return servicio;
 	}
@@ -108,42 +100,12 @@ public class Acciones implements Serializable {
 	public void setTragos(Tragos tragos) {
 		this.tragos = tragos;
 	}
-*/
-	/*
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-*/
-	
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
 	
-	public String getServicio_id() {
-		return servicio_id;
-	}
-
-	public void setServicio_id(String servicio_id) {
-		this.servicio_id = servicio_id;
-	}
-
-	public String getTragos_id() {
-		return tragos_id;
-	}
-
-	public void setTragos_id(String trago_id) {
-		this.tragos_id = trago_id;
-	}
-
-	public String getUsuario_id() {
-		return usuario_id;
-	}
-
-	public void setUsuario_id(String usuario_id) {
-		this.usuario_id = usuario_id;
-	}
-
 	public String getTipo_accion() {
 		return tipo_accion;
 	}
@@ -193,6 +155,10 @@ public class Acciones implements Serializable {
 
 	public void setComisiones(String comisiones) {
 		this.comisiones = comisiones;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 

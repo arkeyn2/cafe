@@ -11,8 +11,8 @@ INSERT INTO public.usuario_rol(	usuario_id, rol_id)	VALUES (1, 1);
 INSERT INTO public.usuario_rol(	usuario_id, rol_id)	VALUES (2, 3);
 INSERT INTO public.usuario_rol(	usuario_id, rol_id)	VALUES (3, 2);
 
-INSERT INTO public.trago(id, estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ( 1,'valido','20000', 'efectivo', 'pisco mistral','alcohol','60000');
-INSERT INTO public.trago(id, estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ( 2,'valido','10000', 'devito', 'ron pirata','alcohol','30000');
+INSERT INTO public.trago(id, estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ( 1,'valido','20000', 'efectivo', 'trago 20 mil','alcohol','20000');
+INSERT INTO public.trago(id, estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ( 2,'valido','30000', 'devito', 'trago 30 mil','alcohol','30000');
 INSERT INTO public.trago(id, estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ( 3,'valido','3000', 'credito', 'coca cola','bebida','8000');
 
 INSERT INTO public.horario(	id, estado, horario_entrada, horario_salida) VALUES (1, 'valido', '23:00', '03:00');
@@ -23,6 +23,3 @@ INSERT INTO public.horario(	id, estado, horario_entrada, horario_salida) VALUES 
 
 INSERT INTO public.control(	id, fecha, hora_entrada, hora_salida, total_horaextra, horarios_id, usuario_id)	VALUES (1, '2016-02-12','20:00', '01:00', '3', 1, 1);
 
-INSERT INTO public.servicios(id, detalle_servicio, estado_servicio, iva, metodo_pago, nombre_servicio, pieza, tipo_servicio, valor)	VALUES (1, 'masaje', 'ocupado', 10000, 'efectivo', 'masaje', '3', 'privado', 100000);
-
-INSERT INTO public.acciones(id, estado, estado_de_pago, fecha_dia, tipo_accion, total_ganado, servicio_id, tragos_id, usuario_id)	VALUES (1, 'activa', 'pendiente', '2023-03-23', 'privada', '300000', 1, 1, 1);
