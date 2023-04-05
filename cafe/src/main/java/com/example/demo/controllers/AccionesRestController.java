@@ -157,14 +157,14 @@ public class AccionesRestController {
 		return new ResponseEntity<List<Acciones>>(accion, HttpStatus.OK);
 	}
 	
-	@GetMapping("/acciones/dia/{id}/{fecha}")
-	public ResponseEntity<?> chicaporfecha(@PathVariable Long id,@PathVariable String fecha)throws ParseException {
+	@GetMapping("/acciones/dia/{nombre}/{fecha}")
+	public ResponseEntity<?> chicaporfecha(@PathVariable String nombre,@PathVariable String fecha)throws ParseException {
 
 		List<Acciones> accion = null;
 		Map<String, Object> response = new HashMap<>();
 
 		try {
-			accion = accionesService.chicaporfecha(id,fecha);
+			accion = accionesService.chicaporfecha(nombre,fecha);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al realizar la consulta en la base de datos");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
@@ -172,7 +172,7 @@ public class AccionesRestController {
 		}
 
 		if (accion == null) {
-			response.put("mensaje", "La accion Id:".concat(id.toString().concat(" no existe en la base de datos!")));
+			response.put("mensaje", "La accion Id:".concat(nombre.toString().concat(" no existe en la base de datos!")));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<List<Acciones>>(accion, HttpStatus.OK);
