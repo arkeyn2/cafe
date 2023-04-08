@@ -81,7 +81,7 @@ public class AccionesRestController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
 	
-	@PutMapping("/tipos/{id}")
+	@PutMapping("/acciones/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<?> update(@RequestBody Acciones acciones, @PathVariable Long id) {
 
