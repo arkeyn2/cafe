@@ -43,6 +43,8 @@ public class Acciones implements Serializable {
 	
 	private String pendiente;
 
+	private String dia_activo;
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Servicios servicio;
@@ -58,7 +60,15 @@ public class Acciones implements Serializable {
 
 	
 
+	public String getDia_activo() {
+		return dia_activo;
+	}
 
+
+
+	public void setDia_activo(String dia_activo) {
+		this.dia_activo = dia_activo;
+	}
 
 	public long getId() {
 		return id;

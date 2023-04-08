@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.example.demo.models.entity.Acciones;
 import com.example.demo.models.services.IAccionesService;
 
@@ -108,6 +109,7 @@ public class AccionesRestController {
 			accionesActual.setEstado(acciones.getEstado());
 			accionesActual.setAdelanto(acciones.getAdelanto());
 			accionesActual.setComisiones(acciones.getComisiones());
+			accionesActual.setDia_activo(acciones.getDia_activo());
 			
 			accionesUpdate = accionesService.save(accionesActual);
 
