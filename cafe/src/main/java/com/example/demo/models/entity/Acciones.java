@@ -25,16 +25,16 @@ public class Acciones implements Serializable {
 	
 	private String fecha_dia;
 
-	@Column(nullable = false)
+	
 	private String total_ganado;
 	
-	@Column(nullable = false)
+
 	private String tipo_accion;
 
-	@Column(nullable = false)
+
 	private String estado_de_pago;
 	
-	@Column(nullable = false)
+
 	private String estado;
 	
 	private String adelanto;
