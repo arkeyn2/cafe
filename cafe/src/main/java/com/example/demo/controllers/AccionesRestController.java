@@ -200,4 +200,35 @@ public class AccionesRestController {
 		}
 		return new ResponseEntity<List<Acciones>>(accion, HttpStatus.OK);
 	}
+	
+	@PutMapping("/accionestado/{id}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<?> updatestado(@RequestBody Acciones acciones, @PathVariable Long id) {
+
+		Acciones accionesActual = accionesService.findById(id);
+
+		Acciones accionesUpdate = null;
+
+		Map<String, Object> response = new HashMap<>();
+
+		if (acciones == null) {
+			response.put("mensaje", "La accione Id:".concat(id.toString().concat(" no existe en la base de datos!")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+
+		try {
+
+			accionesActual.setEstado(acciones.getEstado());
+			
+			accionesUpdate = accionesService.save(accionesActual);
+
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar actualizado en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		response.put("mensaje", "la accion ha sido actualizado con exito!");
+		response.put("acciones", accionesUpdate);
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
+	}
 }

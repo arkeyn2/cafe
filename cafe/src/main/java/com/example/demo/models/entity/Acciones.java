@@ -44,6 +44,8 @@ public class Acciones implements Serializable {
 	private String pendiente;
 
 	private String dia_activo;
+	
+	private String caja;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })

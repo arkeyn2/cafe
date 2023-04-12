@@ -2,6 +2,6 @@ package com.example.demo.enums;
 
 public enum RolNombre {
     ROLE_ADMIN,
-    ROLE_USER,
-    ROLE_SECRETARIA
+    ROLE_CHICA,
+    ROLE_MESERO
 }

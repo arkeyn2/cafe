@@ -71,12 +71,12 @@ public class AuthController {
                     Rol rolAdmin = rolService.getByRolNombre(RolNombre.ROLE_ADMIN).get();
                     roles.add(rolAdmin);
                     break;
-                case "secretaria":
-                    Rol rolSecretaria = rolService.getByRolNombre(RolNombre.ROLE_SECRETARIA).get();
+                case "mesero":
+                    Rol rolSecretaria = rolService.getByRolNombre(RolNombre.ROLE_MESERO).get();
                     roles.add(rolSecretaria);
                     break;
                 default:
-                    Rol rolUser = rolService.getByRolNombre(RolNombre.ROLE_USER).get();
+                    Rol rolUser = rolService.getByRolNombre(RolNombre.ROLE_CHICA).get();
                     roles.add(rolUser);
             }
         }
