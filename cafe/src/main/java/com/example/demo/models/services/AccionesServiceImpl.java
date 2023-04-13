@@ -44,7 +44,7 @@ public class AccionesServiceImpl implements IAccionesService {
 		
 }
 	@Override
-	public List<Acciones> chicaporfecha(String nombre , String fecha) {
+	public List<Acciones> chicaporfecha(String nombre , Date fecha) {
 		return accionDao.chicaporfecha(nombre,fecha);
 	}
 	

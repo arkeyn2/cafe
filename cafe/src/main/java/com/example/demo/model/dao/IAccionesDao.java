@@ -18,7 +18,7 @@ public interface IAccionesDao extends CrudRepository<Acciones, Long>{
 	public List<Acciones> chicaporfecha(Long id,String fecha);
 	
 	@Query("select ac from Acciones ac inner join Tragos tra on ac.tragos.id=tra.id inner join Servicios se on se.id=ac.servicio.id inner join Usuario us on us.id=ac.usuario.id where us.nombreUsuario=?1 and ac.fecha_dia=?2")
-	public List<Acciones> chicaporfecha(String nombre_user,String fecha);
+	public List<Acciones> chicaporfecha(String nombre_user,Date fecha);
 	
 	@Query("select ac from Acciones ac inner join Tragos tra on ac.tragos.id=tra.id inner join Servicios se on se.id=ac.servicio.id where ac.fecha_dia Between ?1 and ?2")
 	public List<Acciones> fechainformes(Date fecha1 ,Date fecha2);

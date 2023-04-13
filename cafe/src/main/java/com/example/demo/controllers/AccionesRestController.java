@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -164,9 +165,11 @@ public class AccionesRestController {
 
 		List<Acciones> accion = null;
 		Map<String, Object> response = new HashMap<>();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		Date date = simpleDateFormat.parse(fecha);
 
 		try {
-			accion = accionesService.chicaporfecha(nombre,fecha);
+			accion = accionesService.chicaporfecha(nombre,date);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al realizar la consulta en la base de datos");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
@@ -181,13 +184,17 @@ public class AccionesRestController {
 	}
 	
 	@GetMapping("/acciones/informes/{fecha1}/{fecha2}")
-	public ResponseEntity<?> fechainformes(@PathVariable Date fecha1,@PathVariable Date fecha2)throws ParseException {
+	public ResponseEntity<?> fechainformes(@PathVariable String fecha1,@PathVariable String fecha2)throws ParseException {
 
 		List<Acciones> accion = null;
 		Map<String, Object> response = new HashMap<>();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		Date date = simpleDateFormat.parse(fecha1);
+		SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("dd-MM-yyyy");
+		Date date2 = simpleDateFormat2.parse(fecha2);
 
 		try {
-			accion = accionesService.fechainformes(fecha1,fecha2);
+			accion = accionesService.fechainformes(date,date2);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al realizar la consulta en la base de datos");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
