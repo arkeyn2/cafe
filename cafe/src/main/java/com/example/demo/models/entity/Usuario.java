@@ -45,6 +45,8 @@ public class Usuario {
     
     @NotNull
     private String tipo;
+    
+    private String estado;
 
     @NotNull
     @ManyToMany
@@ -138,5 +140,14 @@ public class Usuario {
 		this.tipo = tipo;
 	}
 
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	
     
 }
