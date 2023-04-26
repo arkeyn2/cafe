@@ -21,6 +21,8 @@ public class NuevoUsuario {
     private Set<String> roles;
     
     private String tipo;
+    
+    private String fecha_in;
 
     public String getNombre() {
         return nombre;
@@ -85,5 +87,14 @@ public class NuevoUsuario {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+
+	public String getFecha_in() {
+		return fecha_in;
+	}
+
+	public void setFecha_in(String fecha_in) {
+		this.fecha_in = fecha_in;
+	}
     
+	
 }
