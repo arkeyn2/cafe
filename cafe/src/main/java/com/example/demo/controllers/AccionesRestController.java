@@ -238,4 +238,25 @@ public class AccionesRestController {
 		response.put("acciones", accionesUpdate);
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
+
+	@GetMapping("/acciones/findia/{fd}")
+	public ResponseEntity<?> findia(@PathVariable String fd) throws ParseException {
+		
+		Map<String, Object> response = new HashMap<>();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		Date date = simpleDateFormat.parse(fd);
+		
+		List<Object> reservahora = null;
+
+		try {
+			reservahora = accionesService.findia(date);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al ejecutar procedimiento almacenado en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+
+		return new ResponseEntity <List<Object>>(reservahora, HttpStatus.OK);
+	}
+
 }

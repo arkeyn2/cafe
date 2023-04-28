@@ -52,4 +52,9 @@ public class AccionesServiceImpl implements IAccionesService {
 	public List<Acciones> fechainformes(Date fecha1 , Date fecha2) {
 		return accionDao.fechainformes(fecha1,fecha2);
 	}
+	
+	@Override
+	public List<Object> findia(Date fecha) {
+		return accionDao.findia(fecha);
+	}
 }

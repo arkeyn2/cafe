@@ -20,6 +20,7 @@ public interface IAccionesService {
 	public List<Acciones> chicaporfecha(String nombre,Date fecha); 
 	
 	public List<Acciones> fechainformes(Date fecha1,Date fecha2); 
-
-
+	
+	public List<Object> findia(Date fecha); 
+	
 }

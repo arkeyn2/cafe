@@ -3,6 +3,7 @@ package com.example.demo.model.dao;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -25,6 +26,12 @@ public interface IAccionesDao extends CrudRepository<Acciones, Long>{
 	
 	@Query("SELECT sum(comisiones) FROM Acciones where usuario.id=?1 and fecha_dia=?2")
 	public List<Acciones> totoalcomicionId(Long id,String fecha);
+	
+	@Modifying
+	@Query(value=  "select cast(findia(?1)as text)",nativeQuery = true  )
+	public List<Object> findia(Date fd);
+	
+
 	
 }
 
