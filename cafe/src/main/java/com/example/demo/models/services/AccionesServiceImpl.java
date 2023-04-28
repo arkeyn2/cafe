@@ -57,4 +57,8 @@ public class AccionesServiceImpl implements IAccionesService {
 	public List<Object> findia(Date fecha) {
 		return accionDao.findia(fecha);
 	}
+	
+	public List<Acciones> cierrecaja(Date fecha1 , Date fecha2) {
+		return accionDao.cierrecaja(fecha1,fecha2);
+	}
 }

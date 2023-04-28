@@ -31,7 +31,26 @@ public interface IAccionesDao extends CrudRepository<Acciones, Long>{
 	@Query(value=  "select cast(findia(?1)as text)",nativeQuery = true  )
 	public List<Object> findia(Date fd);
 	
-
-	
+	@Query("select sum(ac.caja) as caja,"
+			+ "sum(ac.comisiones) as comisiones,"
+			+ "sum(ac.total_ganado) as total_ganado,"
+			+ "sum(tra.iva) as iva_trago,"
+			+ "sum(tra.valor_trago) as valor_trago,"
+			+ "sum(se.iva) as iva_servicio,"
+			+ "sum(se.valor) as valor_servicio "
+			+ "from Acciones ac "
+			+ "inner join Tragos tra on ac.tragos.id=tra.id "
+			+ "inner join Servicios se on se.id=ac.servicio.id "
+			+ "where ac.fecha_dia Between ?1 and ?2")
+	public List<Acciones> cierrecaja(Date fecha1 ,Date fecha2);
+	/*
+	select sum(ac.caja) as caja,sum(ac.comisiones) as comisiones,sum(total_ganado) as total_ganado,sum(tra.iva) as iva_trago,sum(tra.valor_trago) as valor_trago,sum(se.iva) as iva_servicio,sum(se.valor) as valor_servicio from Acciones ac inner join Tragos tra on ac.tragos.id=tra.id inner join Servicios se on se.id=ac.servicio.id where ac.fecha_dia Between ?1 and ?2
+	select sum(ac.caja)as caja,sum(ac.comisiones) as comisiones,
+	sum(total_ganado) as total_ganado,sum(tra.iva) as iva_trago,sum(tra.valor_trago) as valor_trago,
+	sum(se.iva) as iva_servicio,sum(se.valor) as valor_servicio from acciones ac 
+	inner join trago tra on ac.tragos_id=tra.id 
+	inner join servicios se on se.id=ac.servicio_id 
+	where ac.fecha_dia between '2023-01-01' and '2023-05-01'
+	*/
 }
 

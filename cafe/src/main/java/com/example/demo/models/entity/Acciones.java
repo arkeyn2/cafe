@@ -31,7 +31,7 @@ public class Acciones implements Serializable {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date fecha_dia;
 
-	private String total_ganado;
+	private int total_ganado;
 
 	private String tipo_accion;
 
@@ -39,15 +39,15 @@ public class Acciones implements Serializable {
 
 	private String estado;
 
-	private String adelanto;
+	private int adelanto;
 
-	private String comisiones;
+	private int comisiones;
 
 	private String pendiente;
 
 	private String dia_activo;
 
-	private String caja;
+	private int caja;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
@@ -85,11 +85,11 @@ public class Acciones implements Serializable {
 		this.fecha_dia = fecha_dia;
 	}
 
-	public String getTotal_ganado() {
+	public int getTotal_ganado() {
 		return total_ganado;
 	}
 
-	public void setTotal_ganado(String total_ganado) {
+	public void setTotal_ganado(int total_ganado) {
 		this.total_ganado = total_ganado;
 	}
 
@@ -117,19 +117,19 @@ public class Acciones implements Serializable {
 		this.estado = estado;
 	}
 
-	public String getAdelanto() {
+	public int getAdelanto() {
 		return adelanto;
 	}
 
-	public void setAdelanto(String adelanto) {
+	public void setAdelanto(int adelanto) {
 		this.adelanto = adelanto;
 	}
 
-	public String getComisiones() {
+	public int getComisiones() {
 		return comisiones;
 	}
 
-	public void setComisiones(String comisiones) {
+	public void setComisiones(int comisiones) {
 		this.comisiones = comisiones;
 	}
 

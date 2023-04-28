@@ -23,4 +23,5 @@ public interface IAccionesService {
 	
 	public List<Object> findia(Date fecha); 
 	
+	public List<Acciones> cierrecaja(Date fecha1,Date fecha2); 
 }

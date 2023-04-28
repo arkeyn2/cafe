@@ -26,9 +26,9 @@ public class Tragos implements Serializable {
 	private String estado_trago;
 
 	@Column(nullable = false)
-	private String valor_trago;
+	private int valor_trago;
 	
-	private String iva;
+	private int iva;
 	
 	private String metodo_pago;
 
@@ -64,19 +64,19 @@ public class Tragos implements Serializable {
 		this.estado_trago = estado_trago;
 	}
 
-	public String getValor_trago() {
+	public int getValor_trago() {
 		return valor_trago;
 	}
 
-	public void setValor_trago(String valor_trago) {
+	public void setValor_trago(int valor_trago) {
 		this.valor_trago = valor_trago;
 	}
 
-	public String getIva() {
+	public int getIva() {
 		return iva;
 	}
 
-	public void setIva(String iva) {
+	public void setIva(int iva) {
 		this.iva = iva;
 	}
 

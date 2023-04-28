@@ -27,7 +27,7 @@ public class Total_dia implements Serializable {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date fechadia;
 
-	private String total;
+	private int total;
 
 	public Long getId() {
 		return id;
@@ -45,11 +45,11 @@ public class Total_dia implements Serializable {
 		this.fechadia = fecha_dia;
 	}
 
-	public String getTotal() {
+	public int getTotal() {
 		return total;
 	}
 
-	public void setTotal(String total) {
+	public void setTotal(int total) {
 		this.total = total;
 	}
 

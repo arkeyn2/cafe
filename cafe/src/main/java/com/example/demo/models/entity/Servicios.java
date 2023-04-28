@@ -28,11 +28,9 @@ public class Servicios implements Serializable {
 
 	private String metodo_pago;
 
-	private String valor;
+	private int valor;
 
-	private String valor_servicio;
-
-	private String iva;
+	private int iva;
 	
 	private String pieza;
 
@@ -88,19 +86,19 @@ public class Servicios implements Serializable {
 		return serialVersionUID;
 	}
 
-	public String getValor() {
+	public int getValor() {
 		return valor;
 	}
 
-	public void setValor(String valor) {
+	public void setValor(int valor) {
 		this.valor = valor;
 	}
 
-	public String getIva() {
+	public int getIva() {
 		return iva;
 	}
 
-	public void setIva(String iva) {
+	public void setIva(int iva) {
 		this.iva = iva;
 	}
 	
@@ -111,15 +109,6 @@ public class Servicios implements Serializable {
 
 	public void setPieza(String pieza) {
 		this.pieza = pieza;
-	}
-
-	
-	public String getValor_servicio() {
-		return valor_servicio;
-	}
-
-	public void setValor_servicio(String valor_servicio) {
-		this.valor_servicio = valor_servicio;
 	}
 
 	private static final long serialVersionUID = 1L;
