@@ -2,19 +2,19 @@ package com.example.demo.models.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.dao.IHorarioDao;
 import com.example.demo.models.entity.Horarios;
 
 @Service
 public class HorarioServiceImpl implements IHorarioService {
-
+	
+	@Autowired
 	private IHorarioDao horarioDao;
 
 	@Override
-	@Transactional(readOnly = true)
 	public List<Horarios> findAll() {
 		return (List<Horarios>) horarioDao.findAll();
 	}
