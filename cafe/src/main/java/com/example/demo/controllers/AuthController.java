@@ -62,7 +62,7 @@ public class AuthController {
             return new ResponseEntity(new Mensaje("ese email ya existe"), HttpStatus.BAD_REQUEST);
         Usuario usuario =
                 new Usuario(nuevoUsuario.getNombre(), nuevoUsuario.getNombreUsuario(), nuevoUsuario.getEmail(),
-                        passwordEncoder.encode(nuevoUsuario.getPassword()), nuevoUsuario.getApellido(),nuevoUsuario.getRut(),nuevoUsuario.getTipo());
+                        passwordEncoder.encode(nuevoUsuario.getPassword()), nuevoUsuario.getApellido(),nuevoUsuario.getRut(),nuevoUsuario.getTipo(), null);
         Set<String> rolesStr = nuevoUsuario.getRoles();
         Set<Rol> roles = new HashSet<>();
         for (String rol : rolesStr) {

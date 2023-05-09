@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,6 +30,9 @@ public class UsuarioRestController {
 
 	@Autowired
 	private IUsuarioService usuarioService;
+	
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
 	@GetMapping("/usuarios")
 	public List<Usuario> index() {
@@ -82,9 +86,13 @@ public class UsuarioRestController {
 	public ResponseEntity<?> create(@RequestBody Usuario usuario) {
 
 		Usuario usuarionew = null;
+		String newpass = passwordEncoder.encode(usuario.getPassword());
+		usuario.setPassword(newpass);
+			
 		Map<String, Object> response = new HashMap<>();
 
 		try {
+			//passwordEncoder.encode(nuevoUsuario.getPassword());
 			usuarionew = usuarioService.save(usuario);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al realizar el insert en la base de datos");
@@ -123,6 +131,7 @@ public class UsuarioRestController {
 			usuarioActual.setNombreUsuario(usuario.getNombreUsuario());
 			usuarioActual.setPassword(usuario.getPassword());
 			usuarioActual.setRoles(usuario.getRoles());
+			usuarioActual.setTipo_contrato(usuario.getTipo_contrato());
 
 			usuarioUpdate = usuarioService.save(usuarioActual);
 

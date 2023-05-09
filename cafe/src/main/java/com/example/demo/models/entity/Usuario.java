@@ -51,6 +51,8 @@ public class Usuario {
     
     private Date fecha_in;
 
+    private String tipo_contrato;
+    
     @NotNull
     @ManyToMany
     @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
@@ -59,7 +61,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(@NotNull String nombre, @NotNull String nombreUsuario, @NotNull String email, @NotNull String password,@NotNull String tipo,@NotNull String apellido,@NotNull String rut) {
+    public Usuario(@NotNull String nombre, @NotNull String nombreUsuario, @NotNull String email, @NotNull String password,@NotNull String tipo,@NotNull String apellido,@NotNull String rut,@NotNull String tipo_contrato) {
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
         this.email = email;
@@ -67,6 +69,7 @@ public class Usuario {
         this.apellido = apellido;
         this.rut = rut;
         this.tipo = tipo;
+        this.tipo_contrato = tipo_contrato;
 
     }
 
@@ -157,6 +160,14 @@ public class Usuario {
 
 	public void setFecha_in(Date fecha_in) {
 		this.fecha_in = fecha_in;
+	}
+
+	public String getTipo_contrato() {
+		return tipo_contrato;
+	}
+
+	public void setTipo_contrato(String tipo_contrato) {
+		this.tipo_contrato = tipo_contrato;
 	}
 
 	
