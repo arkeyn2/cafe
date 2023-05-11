@@ -1,4 +1,4 @@
-INSERT INTO rol (rol_nombre) VALUES ('ROLE_ADMIN'), ('ROLE_USER'), ('ROLE_SECRETARIA');
+INSERT INTO rol (rol_nombre) VALUES ('ROLE_ADMIN'), ('ROLE_CHICA'), ('ROLE_MESERO'), ('ROLE_BAILARINA');
 
 INSERT INTO public.usuario(apellido, email, nombre, nombre_usuario, password, rut) VALUES ('alexis', 'a@a.a','alexis' ,'alexis' , '$2a$10$g1NiG2AiQpTxg/a8HkvB.ObqopcO1QCk76jywtelrv17BMpulR4F2', '123456');
 	
