@@ -48,6 +48,8 @@ public class UsuarioService implements IUsuarioService{
 	public Usuario findById(Long id) {
 		return usuarioDao.findById(id).orElse(null);
 	}
+	
+	
 
 	@Override
 	public Usuario save(Usuario usuario) {
@@ -67,6 +69,12 @@ public class UsuarioService implements IUsuarioService{
 	
 	public List<Usuario> findTraeChica(String tipo) {
 		return usuarioDao.findTraeChica(tipo);
+	}
+
+	@Override
+	public Usuario cambioestado(Long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
     

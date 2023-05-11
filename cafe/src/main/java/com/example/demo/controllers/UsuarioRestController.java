@@ -132,6 +132,38 @@ public class UsuarioRestController {
 			usuarioActual.setPassword(usuario.getPassword());
 			usuarioActual.setRoles(usuario.getRoles());
 			usuarioActual.setTipo_contrato(usuario.getTipo_contrato());
+			usuarioActual.setEstado(usuario.getEstado());
+
+			usuarioUpdate = usuarioService.save(usuarioActual);
+
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar el actualizar en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		response.put("mensaje", "El usuario ha sido actualizado con exito!");
+		response.put("usuario", usuarioUpdate);
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
+	}
+	
+	@PutMapping("/usuarios/estado/{id}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<?> cambioestado(@RequestBody Usuario usuario, @PathVariable Long id) {
+
+		Usuario usuarioActual = usuarioService.findById(id);
+
+		Usuario usuarioUpdate = null;
+
+		Map<String, Object> response = new HashMap<>();
+
+		if (usuario == null) {
+			response.put("mensaje", "El usuario Id:".concat(id.toString().concat(" no existe en la base de datos!")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+
+		try {
+
+			usuarioActual.setEstado(usuario.getEstado());
 
 			usuarioUpdate = usuarioService.save(usuarioActual);
 

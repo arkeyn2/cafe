@@ -10,6 +10,8 @@ public interface IUsuarioService {
 	
 	public Usuario findById(Long id );
 	
+	public Usuario cambioestado(Long id );
+	
 	public Usuario save(Usuario usuario);
 	
 	public void delete(Long id);
@@ -19,3 +21,5 @@ public interface IUsuarioService {
 	public List<Usuario> findTraeChica(String tipo);
 
 }
+
+
