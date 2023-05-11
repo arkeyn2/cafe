@@ -111,6 +111,10 @@ public class UsuarioRestController {
 	public ResponseEntity<?> update(@RequestBody Usuario usuario, @PathVariable Long id) {
 
 		Usuario usuarioActual = usuarioService.findById(id);
+		
+		String newpass = passwordEncoder.encode(usuario.getPassword());
+		usuario.setPassword(newpass);
+		
 
 		Usuario usuarioUpdate = null;
 
@@ -130,6 +134,7 @@ public class UsuarioRestController {
 			usuarioActual.setTipo(usuario.getTipo());
 			usuarioActual.setNombreUsuario(usuario.getNombreUsuario());
 			usuarioActual.setPassword(usuario.getPassword());
+			usuario.setPassword(newpass);
 			usuarioActual.setRoles(usuario.getRoles());
 			usuarioActual.setTipo_contrato(usuario.getTipo_contrato());
 			usuarioActual.setEstado(usuario.getEstado());
