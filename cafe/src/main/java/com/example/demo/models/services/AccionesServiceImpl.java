@@ -49,16 +49,16 @@ public class AccionesServiceImpl implements IAccionesService {
 	}
 	
 	@Override
-	public List<Acciones> fechainformes(Date fecha1 , Date fecha2) {
+	public List<Acciones> fechainformes(String fecha1 , String fecha2) {
 		return accionDao.fechainformes(fecha1,fecha2);
 	}
 	
 	@Override
-	public List<Object> findia(Date fecha) {
+	public List<Object> findia(String fecha) {
 		return accionDao.findia(fecha);
 	}
 	
-	public List<Acciones> cierrecaja(Date fecha1 , Date fecha2) {
+	public List<Object> cierrecaja(String fecha1 , String fecha2) {
 		return accionDao.cierrecaja(fecha1,fecha2);
 	}
 }

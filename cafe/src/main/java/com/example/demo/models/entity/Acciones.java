@@ -27,9 +27,8 @@ public class Acciones implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private Date fecha_dia;
+
+	private String fecha_dia;
 
 	private int total_ganado;
 
@@ -77,11 +76,11 @@ public class Acciones implements Serializable {
 		this.id = id;
 	}
 
-	public Date getFecha_dia() {
+	public String getFecha_dia() {
 		return fecha_dia;
 	}
 
-	public void setFecha_dia(Date fecha_dia) {
+	public void setFecha_dia(String fecha_dia) {
 		this.fecha_dia = fecha_dia;
 	}
 

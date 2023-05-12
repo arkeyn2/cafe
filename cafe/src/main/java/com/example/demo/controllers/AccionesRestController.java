@@ -188,13 +188,14 @@ public class AccionesRestController {
 
 		List<Acciones> accion = null;
 		Map<String, Object> response = new HashMap<>();
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		/*SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
 		Date date = simpleDateFormat.parse(fecha1);
 		SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("dd-MM-yyyy");
 		Date date2 = simpleDateFormat2.parse(fecha2);
-
+*/      System.out.println(fecha1+" entro");
+		System.out.println(fecha2);
 		try {
-			accion = accionesService.fechainformes(date,date2);
+			accion = accionesService.fechainformes(fecha1,fecha2);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al realizar la consulta en la base de datos");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
@@ -243,13 +244,13 @@ public class AccionesRestController {
 	public ResponseEntity<?> findia(@PathVariable String fd) throws ParseException {
 		
 		Map<String, Object> response = new HashMap<>();
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
-		Date date = simpleDateFormat.parse(fd);
+		//SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		//Date date = simpleDateFormat.parse(fd);
 		
 		List<Object> reservahora = null;
 
 		try {
-			reservahora = accionesService.findia(date);
+			reservahora = accionesService.findia(fd);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al ejecutar procedimiento almacenado en la base de datos");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
@@ -262,15 +263,11 @@ public class AccionesRestController {
 	@GetMapping("/acciones/cierrecaja/{fecha1}/{fecha2}")
 	public ResponseEntity<?> cierrecaja(@PathVariable String fecha1,@PathVariable String fecha2)throws ParseException {
 
-		List<Acciones> accion = null;
+		List<Object> accion = null;
 		Map<String, Object> response = new HashMap<>();
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
-		Date date = simpleDateFormat.parse(fecha1);
-		SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("dd-MM-yyyy");
-		Date date2 = simpleDateFormat2.parse(fecha2);
 
 		try {
-			accion = accionesService.fechainformes(date,date2);
+			accion = accionesService.cierrecaja(fecha1,fecha1);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al realizar la consulta en la base de datos");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
@@ -281,7 +278,7 @@ public class AccionesRestController {
 			response.put("mensaje", "La accion Id:".concat(fecha1.toString().concat(" no existe en la base de datos!")));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<List<Acciones>>(accion, HttpStatus.OK);
+		return new ResponseEntity<List<Object>>(accion, HttpStatus.OK);
 	}
 
 }

@@ -19,9 +19,9 @@ public interface IAccionesService {
 	
 	public List<Acciones> chicaporfecha(String nombre,Date fecha); 
 	
-	public List<Acciones> fechainformes(Date fecha1,Date fecha2); 
+	public List<Acciones> fechainformes(String fecha1,String fecha2); 
 	
-	public List<Object> findia(Date fecha); 
+	public List<Object> findia(String fecha); 
 	
-	public List<Acciones> cierrecaja(Date fecha1,Date fecha2); 
+	public List<Object> cierrecaja(String fecha1,String fecha2); 
 }
