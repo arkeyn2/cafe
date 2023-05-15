@@ -11,11 +11,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.models.entity.Horarios;
 import com.example.demo.models.entity.Total_dia;
+import com.example.demo.models.entity.Tragos;
 import com.example.demo.models.services.ITotal_diaServiceImpl;
 
 @CrossOrigin(origins = { "http://localhost:4200","*" })
@@ -51,5 +55,56 @@ public class Total_diaRestController {
 		}
 		return new ResponseEntity<Total_dia>(totaldia, HttpStatus.OK);
 
+	}
+	
+	@PostMapping("/totaldia")
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<?> create (@RequestBody Total_dia totaldia){
+		System.out.println(totaldia);
+		Total_dia totaldianew =null;
+		Map<String, Object> response = new HashMap<>();
+		
+		try {
+			totaldianew = totaldiaser.save(totaldia);
+			
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar el insert en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		response.put("mensaje", "El dia ha sido creado con exito!");
+		response.put("trago", totaldianew);
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
+	}
+	
+	@PostMapping("/totaldia/{id}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<?> update(@RequestBody Total_dia totaldia, @PathVariable Long id ){
+	
+		Total_dia totaldiaActual =totaldiaser.findById(id);
+		
+		Total_dia totaldiaUpdate =null;
+		
+		Map<String, Object> response = new HashMap<>();
+		
+		if (totaldia == null) {
+			response.put("mensaje", "El dia Id:" .concat(id.toString().concat(" no existe en la base de datos!")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		
+		}
+		try {
+			totaldiaActual.setIngreso_caja(totaldia.getIngreso_caja());
+			totaldiaActual.setTotal(totaldia.getTotal());
+			
+			totaldiaUpdate = totaldiaser.save(totaldiaActual);
+		}catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar actualizado en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+	
+		}
+		response.put("mensaje", "El dia ha sido actualizado con exito!");
+		response.put("trago", totaldiaUpdate);
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
 }

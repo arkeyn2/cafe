@@ -23,9 +23,9 @@ public class Total_dia implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	//@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private Date fechadia;
+	private String fechadia;
+	
+	private int ingreso_caja;
 
 	private int total;
 
@@ -37,11 +37,23 @@ public class Total_dia implements Serializable {
 		this.id = id;
 	}
 
-	public Date getFechadia() {
+	public String getFechadia() {
 		return fechadia;
 	}
 
-	public void setFechadia(Date fecha_dia) {
+	public int getIngreso_caja() {
+		return ingreso_caja;
+	}
+
+	public void setIngreso_caja(int ingreso_caja) {
+		this.ingreso_caja = ingreso_caja;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public void setFechadia(String fecha_dia) {
 		this.fechadia = fecha_dia;
 	}
 
