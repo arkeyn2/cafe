@@ -23,16 +23,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "acciones")
 public class Acciones implements Serializable {
 
-
-
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-
 	private String fecha_dia;
-	
+
 	private Date fecha_trago;
 
 	private int total_ganado;

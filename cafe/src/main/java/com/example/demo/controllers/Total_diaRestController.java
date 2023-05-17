@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -106,5 +107,25 @@ public class Total_diaRestController {
 		response.put("mensaje", "El dia ha sido actualizado con exito!");
 		response.put("trago", totaldiaUpdate);
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/bcaja/{fd}")
+	public ResponseEntity<?> bcaja(@PathVariable String fd) throws ParseException {
+		
+		Map<String, Object> response = new HashMap<>();
+		//SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		//Date date = simpleDateFormat.parse(fd);
+		System.out.println(fd);
+		List<Object> cajadia = null;
+
+		try {
+			cajadia = totaldiaser.bcaja(fd);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al ejecutar procedimiento almacenado en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+
+		return new ResponseEntity <List<Object>>(cajadia, HttpStatus.OK);
 	}
 }

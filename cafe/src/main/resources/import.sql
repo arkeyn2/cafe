@@ -28,5 +28,6 @@ INSERT INTO public.servicios(detalle_servicio, estado_servicio, iva, metodo_pago
 INSERT INTO public.servicios(detalle_servicio, estado_servicio, iva, metodo_pago, nombre_servicio, pieza, tipo_servicio, valor)	VALUES ('perro', 'activo', 1000, 'efe', 'asd', 's', 'sad', 1000);
 
 
-INSERT INTO public.acciones(adelanto, caja, comisiones, dia_activo, estado, estado_de_pago, fecha_dia, pendiente, tipo_accion, total_ganado, servicio_id, tragos_id, usuario_id) VALUES ( 0, 0, 0, '2023-05-15', 'pagado', 'p', '2023-05-15', 's', 's', 0, 1, 2, 1);
-INSERT INTO public.acciones(adelanto, caja, comisiones, dia_activo, estado, estado_de_pago, fecha_dia, pendiente, tipo_accion, total_ganado, servicio_id, tragos_id, usuario_id) VALUES ( 0, 0, 0, '2023-05-15', 'pagado', 'p', '2023-05-15', 's', 's', 0, 1, 2, 1);
+INSERT INTO public.acciones(adelanto, caja, comisiones, dia_activo, estado, estado_de_pago, fecha_dia, pendiente, tipo_accion, total_ganado, servicio_id, tragos_id, usuario_id) VALUES ( 0, 0, 0, '2023-05-15', 'pagado', 'p', '2023-05-17', 's', 's', 0, 1, 2, 1);
+INSERT INTO public.acciones(adelanto, caja, comisiones, dia_activo, estado, estado_de_pago, fecha_dia, pendiente, tipo_accion, total_ganado, servicio_id, tragos_id, usuario_id) VALUES ( 0, 0, 0, '2023-05-15', 'pagado', 'p', '2023-05-17', 's', 's', 0, 1, 2, 1);
+INSERT INTO public.total_dia(fechadia,ingreso_caja,total) VALUES ('2023-05-17',1000,1000);

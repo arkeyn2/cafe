@@ -38,5 +38,10 @@ public class Total_diaServiceImpl implements ITotal_diaServiceImpl {
 		totaldia.deleteById(id);
 		
 	}
+	
+	@Override
+	public List<Object> bcaja(String fecha) {
+		return totaldia.bcaja(fecha);
+	}
 
 }
