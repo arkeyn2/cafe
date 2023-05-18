@@ -53,6 +53,7 @@ public class Usuario {
 
     private String tipo_contrato;
     
+    private String foto;
     @NotNull
     @ManyToMany
     @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
@@ -168,6 +169,14 @@ public class Usuario {
 
 	public void setTipo_contrato(String tipo_contrato) {
 		this.tipo_contrato = tipo_contrato;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	
