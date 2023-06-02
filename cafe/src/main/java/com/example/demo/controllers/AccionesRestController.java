@@ -280,5 +280,51 @@ public class AccionesRestController {
 		}
 		return new ResponseEntity<List<Object>>(accion, HttpStatus.OK);
 	}
+	
+	@GetMapping("/acciones/cierrecaja/id/{fecha1}/{fecha2}/{id}")
+	public ResponseEntity<?> cierrecajaid(@PathVariable String fecha1,@PathVariable String fecha2,@PathVariable Long id)throws ParseException {
+
+		List<Object> accion = null;
+		Map<String, Object> response = new HashMap<>();
+
+		try {
+			accion = accionesService.cierrecajaid(fecha1,fecha1,id);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar la consulta en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+
+		if (accion == null) {
+			response.put("mensaje", "La accion Id:".concat(fecha1.toString().concat(" no existe en la base de datos!")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<List<Object>>(accion, HttpStatus.OK);
+	}
+	@GetMapping("/acciones/informes/id/{fecha1}/{fecha2}/{id}")
+	public ResponseEntity<?> fechainformesid(@PathVariable String fecha1,@PathVariable String fecha2,@PathVariable Long id)throws ParseException {
+
+		List<Acciones> accion = null;
+		Map<String, Object> response = new HashMap<>();
+		/*SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		Date date = simpleDateFormat.parse(fecha1);
+		SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("dd-MM-yyyy");
+		Date date2 = simpleDateFormat2.parse(fecha2);
+*/      System.out.println(fecha1+" entro");
+		System.out.println(fecha2);
+		try {
+			accion = accionesService.fechainformesid(fecha1,fecha2,id);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar la consulta en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+
+		if (accion == null) {
+			response.put("mensaje", "La accion Id:".concat(fecha1.toString().concat(" no existe en la base de datos!")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<List<Acciones>>(accion, HttpStatus.OK);
+	}
 
 }

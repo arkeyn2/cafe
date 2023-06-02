@@ -1,10 +1,10 @@
 INSERT INTO rol (rol_nombre) VALUES ('ROLE_ADMIN'), ('ROLE_CHICA'), ('ROLE_MESERO'), ('ROLE_MESERO');
 
-INSERT INTO public.usuario(apellido, email,estado , nombre, nombre_usuario, password, rut) VALUES ('alexis', 'a@a.a','inactivo','alexis' ,'alexis' , '$2a$10$g1NiG2AiQpTxg/a8HkvB.ObqopcO1QCk76jywtelrv17BMpulR4F2', '123456');
+INSERT INTO public.usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut) VALUES ('alexis', 'a@a.a','inactivo','5b1ab969-8c7d-4a0b-a26b-4ffd24227183_2023-04-01-19_21_55.8080100.jpg','alexis' ,'alexis' , '$2a$10$g1NiG2AiQpTxg/a8HkvB.ObqopcO1QCk76jywtelrv17BMpulR4F2', '123456');
 	
-INSERT INTO public.usuario(apellido, email,estado ,nombre, nombre_usuario, password, rut) VALUES ('secretaria', 's@s.s','inactivo', 'secretaria', 'secretaria', '$2a$10$uNq0xm359UvjKgS4L0Ad5umETvBYtCNFysqokAkisxOCUGC7XsDri', '1234569');
+INSERT INTO public.usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut) VALUES ('secretaria', 's@s.s','inactivo','869182d4-a988-426a-9269-38994c869d96_sona_lingerie_by_lifeisafiction_dfcy0nv-fullview.jpg', 'secretaria', 'secretaria', '$2a$10$uNq0xm359UvjKgS4L0Ad5umETvBYtCNFysqokAkisxOCUGC7XsDri', '1234569');
 	
-INSERT INTO public.usuario(apellido, email,estado , nombre, nombre_usuario, password, rut) VALUES ('trabajador', 'u@u.u','inactivo', 'trabajador', 'trabajador','$2a$10$GrxgW1ydycwaoNGdMWrykulnU8w90ay2oS/p4G60mkMx3hbJRlNfC', '98765432');
+INSERT INTO public.usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut) VALUES ('trabajador', 'u@u.u','inactivo','6e99b238-dddd-4a76-8700-fbff25501485_FhKBlTtXoAIVhYm.jpg', 'trabajador', 'trabajador','$2a$10$GrxgW1ydycwaoNGdMWrykulnU8w90ay2oS/p4G60mkMx3hbJRlNfC', '98765432');
 
 
 INSERT INTO public.usuario_rol(	usuario_id, rol_id)	VALUES (1, 1);

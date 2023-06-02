@@ -28,6 +28,8 @@ public class Total_dia implements Serializable {
 	private int ingreso_caja;
 
 	private int total;
+	
+	private String estado;
 
 	public Long getId() {
 		return id;
@@ -59,6 +61,14 @@ public class Total_dia implements Serializable {
 
 	public int getTotal() {
 		return total;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 	public void setTotal(int total) {
