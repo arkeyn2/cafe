@@ -83,7 +83,7 @@ public class Total_diaRestController {
 	public ResponseEntity<?> update(@RequestBody Total_dia totaldia, @PathVariable Long id ){
 	
 		Total_dia totaldiaActual =totaldiaser.findById(id);
-		
+		System.out.println(totaldia);
 		Total_dia totaldiaUpdate =null;
 		
 		Map<String, Object> response = new HashMap<>();
@@ -96,6 +96,7 @@ public class Total_diaRestController {
 		try {
 			totaldiaActual.setIngreso_caja(totaldia.getIngreso_caja());
 			totaldiaActual.setTotal(totaldia.getTotal());
+			totaldiaActual.setEstado(totaldia.getEstado());
 			
 			totaldiaUpdate = totaldiaser.save(totaldiaActual);
 		}catch (DataAccessException e) {
