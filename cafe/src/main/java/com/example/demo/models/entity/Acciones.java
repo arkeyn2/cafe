@@ -48,6 +48,8 @@ public class Acciones implements Serializable {
 	private String dia_activo;
 
 	private int caja;
+	
+	private int tipo_pago;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
@@ -164,6 +166,32 @@ public class Acciones implements Serializable {
 	public void setTragos(Tragos tragos) {
 		this.tragos = tragos;
 	}
+	
+
+	public Date getFecha_trago() {
+		return fecha_trago;
+	}
+
+	public void setFecha_trago(Date fecha_trago) {
+		this.fecha_trago = fecha_trago;
+	}
+
+	public int getCaja() {
+		return caja;
+	}
+
+	public void setCaja(int caja) {
+		this.caja = caja;
+	}
+
+	public int getTipo_pago() {
+		return tipo_pago;
+	}
+
+	public void setTipo_pago(int tipo_pago) {
+		this.tipo_pago = tipo_pago;
+	}
+
 
 	private static final long serialVersionUID = 1L;
 }
