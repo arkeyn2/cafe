@@ -227,7 +227,7 @@ public class AccionesRestController {
 		try {
 
 			accionesActual.setEstado(acciones.getEstado());
-			
+			accionesActual.setTipo_pago(acciones.getTipo_pago());
 			accionesUpdate = accionesService.save(accionesActual);
 
 		} catch (DataAccessException e) {

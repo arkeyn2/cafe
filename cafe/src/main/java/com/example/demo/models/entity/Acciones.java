@@ -49,7 +49,7 @@ public class Acciones implements Serializable {
 
 	private int caja;
 	
-	private int tipo_pago;
+	private String tipo_pago;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
@@ -184,13 +184,22 @@ public class Acciones implements Serializable {
 		this.caja = caja;
 	}
 
-	public int getTipo_pago() {
+
+
+
+	public String getTipo_pago() {
 		return tipo_pago;
 	}
 
-	public void setTipo_pago(int tipo_pago) {
+	public void setTipo_pago(String tipo_pago) {
 		this.tipo_pago = tipo_pago;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
 
 
 	private static final long serialVersionUID = 1L;
