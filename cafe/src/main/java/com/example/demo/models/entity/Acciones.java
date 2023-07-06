@@ -57,7 +57,7 @@ public class Acciones implements Serializable {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	private Usuario cliente;
+	private Clientes cliente;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
