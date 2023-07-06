@@ -78,7 +78,7 @@ public class ClientesRestController {
 		response.put("clientes", clientesnew);
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
-	@PutMapping("/acciones/{id}")
+	@PutMapping("/clientes/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<?> update(@RequestBody Clientes cliente, @PathVariable Long id) {
 
