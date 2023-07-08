@@ -69,7 +69,7 @@ public class AccionesRestController {
 
 		Acciones accionesnew = null;
 		Map<String, Object> response = new HashMap<>();
-
+		System.out.println(acciones);
 		try {
 			accionesnew = accionesService.save(acciones);
 		} catch (DataAccessException e) {

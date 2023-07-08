@@ -191,6 +191,14 @@ public class Acciones implements Serializable {
 
 
 
+	public Clientes getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Clientes cliente) {
+		this.cliente = cliente;
+	}
+
 	public String getTipo_pago() {
 		return tipo_pago;
 	}
