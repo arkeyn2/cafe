@@ -70,4 +70,8 @@ public class AccionesServiceImpl implements IAccionesService {
 	public List<Acciones> fechainformesid(String fecha1 , String fecha2,Long id) {
 		return accionDao.fechainformesid(fecha1,fecha2,id);
 	}
+	
+	public List<Object> pagocliente(Long id) {
+		return accionDao.pagocliente(id);
+	}
 }

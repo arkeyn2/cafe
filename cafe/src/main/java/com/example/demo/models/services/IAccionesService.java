@@ -28,4 +28,6 @@ public interface IAccionesService {
 	public List<Object> cierrecajaid(String fecha1,String fecha2,Long idu); 
 	
 	public List<Acciones> fechainformesid(String fecha1,String fecha2,Long id); 
+	
+	public List<Object> pagocliente(Long id); 
 }
