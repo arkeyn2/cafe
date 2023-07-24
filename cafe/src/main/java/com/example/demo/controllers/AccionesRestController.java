@@ -111,6 +111,7 @@ public class AccionesRestController {
 			accionesActual.setAdelanto(acciones.getAdelanto());
 			accionesActual.setComisiones(acciones.getComisiones());
 			accionesActual.setDia_activo(acciones.getDia_activo());
+			accionesActual.setBonificacion(acciones.getBonificacion());
 			
 			accionesUpdate = accionesService.save(accionesActual);
 

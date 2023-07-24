@@ -44,6 +44,8 @@ public class Acciones implements Serializable {
 	private int comisiones;
 
 	private String pendiente;
+	
+	private String bonificacion;
 
 	private String dia_activo;
 
@@ -205,6 +207,16 @@ public class Acciones implements Serializable {
 
 	public void setTipo_pago(String tipo_pago) {
 		this.tipo_pago = tipo_pago;
+	}
+	
+	
+
+	public String getBonificacion() {
+		return bonificacion;
+	}
+
+	public void setBonificacion(String bonificacion) {
+		this.bonificacion = bonificacion;
 	}
 
 	public static long getSerialversionuid() {
