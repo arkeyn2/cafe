@@ -22,12 +22,15 @@ INSERT INTO public.horario(estado, horario_entrada, horario_salida) VALUES (3, '
 INSERT INTO public.horario(estado, horario_entrada, horario_salida) VALUES (1, 'valido', '24:00', '04:00');
 INSERT INTO public.horario(estado, horario_entrada, horario_salida) VALUES (1, 'valido', '20:00', '24:00');
 
-INSERT INTO public.control(fecha, hora_entrada, hora_salida, total_horaextra, horarios_id, usuario_id)	VALUES ('2016-02-12','20:00', '01:00', '3', 1, 1);
+INSERT INTO public.control(fecha, usuario_id)	VALUES ('2023-07-05', 1);
+INSERT INTO public.control(fecha, usuario_id)	VALUES ('2023-07-06', 1);
+INSERT INTO public.control(fecha, usuario_id)	VALUES ('2023-07-07', 1);
 
 INSERT INTO public.servicios(detalle_servicio, estado_servicio, iva, metodo_pago, nombre_servicio, pieza, tipo_servicio, valor)	VALUES ('perro', 'activo', 0, 'efe', '---', 's', 'sad', 0);
 INSERT INTO public.servicios(detalle_servicio, estado_servicio, iva, metodo_pago, nombre_servicio, pieza, tipo_servicio, valor)	VALUES ('perro', 'activo', 1000, 'efe', 'asd', 's', 'sad', 1000);
 
 
-INSERT INTO public.acciones(adelanto, caja, comisiones, dia_activo, estado, estado_de_pago, fecha_dia, pendiente, tipo_accion, total_ganado, servicio_id, tragos_id, usuario_id) VALUES ( 0, 0, 0, '2023-05-15', 'pagado', 'p', '2023-05-17', 's', 's', 0, 1, 2, 1);
-INSERT INTO public.acciones(adelanto, caja, comisiones, dia_activo, estado, estado_de_pago, fecha_dia, pendiente, tipo_accion, total_ganado, servicio_id, tragos_id, usuario_id) VALUES ( 0, 0, 0, '2023-05-15', 'pagado', 'p', '2023-05-17', 's', 's', 0, 1, 2, 1);
+INSERT INTO public.acciones(adelanto, caja, comisiones, dia_activo, estado, estado_de_pago, fecha_dia, pendiente, tipo_accion, total_ganado, servicio_id, tragos_id, usuario_id) VALUES ( 10000, 0, 0, '2023-07-24', 'pagado', 'p', '2023-07-24', 's', 's', 0, 1, 2, 1);
+INSERT INTO public.acciones(adelanto, caja, comisiones, dia_activo, estado, estado_de_pago, fecha_dia, pendiente, tipo_accion, total_ganado, servicio_id, tragos_id, usuario_id) VALUES ( 5000, 0, 0, '2023-07-24', 'pagado', 'p', '2023-07-24', 's', 's', 0, 1, 2, 1);
 INSERT INTO public.total_dia(fechadia,ingreso_caja,total) VALUES ('2023-05-17',1000,1000);
+insert into public.clientes(nombre_cliente)values('seleccione');
