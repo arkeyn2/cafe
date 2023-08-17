@@ -45,6 +45,9 @@ public interface IAccionesDao extends CrudRepository<Acciones, Long>{
 	
 	@Query("select ac from Acciones ac inner join Clientes c on c.id=ac.cliente.id where c.id =?1 and ac.estado='pendiente'")
 	public List<Object> pagocliente(Long id);
+	
+	@Query("select ac from Acciones ac inner join Usuario u on u.id=ac.usuario.id where u.id =?1")
+	public List<Object> color(Long id);
 
 	
 	/*

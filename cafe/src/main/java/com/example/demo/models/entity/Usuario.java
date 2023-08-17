@@ -53,6 +53,8 @@ public class Usuario {
 
     private String tipo_contrato;
     
+    private String color;
+    
     private String foto;
     @NotNull
     @ManyToMany
@@ -135,7 +137,16 @@ public class Usuario {
         return roles;
     }
 
-    public void setRoles(Set<Rol> roles) {
+    
+    public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public void setRoles(Set<Rol> roles) {
         this.roles = roles;
     }
 

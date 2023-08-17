@@ -66,6 +66,10 @@ public class AccionesServiceImpl implements IAccionesService {
 		return accionDao.cierrecajaid(fecha1,fecha2,idu);
 	}
 	
+	public List<Object> color(Long idu) {
+		return accionDao.color(idu);
+	}
+	
 	@Override
 	public List<Acciones> fechainformesid(String fecha1 , String fecha2,Long id) {
 		return accionDao.fechainformesid(fecha1,fecha2,id);

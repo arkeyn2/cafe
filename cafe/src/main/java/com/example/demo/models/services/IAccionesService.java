@@ -30,4 +30,6 @@ public interface IAccionesService {
 	public List<Acciones> fechainformesid(String fecha1,String fecha2,Long id); 
 	
 	public List<Object> pagocliente(Long id); 
+	
+	public List<Object> color(Long id); 
 }
