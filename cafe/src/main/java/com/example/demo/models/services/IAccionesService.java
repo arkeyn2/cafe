@@ -32,4 +32,8 @@ public interface IAccionesService {
 	public List<Object> pagocliente(Long id); 
 	
 	public List<Object> color(Long id); 
+	
+	public List<Object> nombreusuarioid(String id); 
+	
 }
+
