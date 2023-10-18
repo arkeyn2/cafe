@@ -1,20 +1,74 @@
-INSERT INTO rol (rol_nombre) VALUES ('ROLE_ADMIN'), ('ROLE_CHICA'), ('ROLE_MESERO'), ('ROLE_BAILARIONA');
-
 INSERT INTO public.usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut) VALUES ('alexis', 'a@a.a','inactivo','5b1ab969-8c7d-4a0b-a26b-4ffd24227183_2023-04-01-19_21_55.8080100.jpg','alexis' ,'alexis' , '$2a$10$g1NiG2AiQpTxg/a8HkvB.ObqopcO1QCk76jywtelrv17BMpulR4F2', '123456');
 	
 INSERT INTO public.usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut) VALUES ('mesero', 's@s.s','inactivo','869182d4-a988-426a-9269-38994c869d96_sona_lingerie_by_lifeisafiction_dfcy0nv-fullview.jpg', 'mesero', 'mesero', '$2a$10$1LBaC082dl.Y.WTZpyRoNesxNi/uxtqRXq.1NufvNHyAO2sNnCYJy', '1234569');
 	
 INSERT INTO public.usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut) VALUES ('chica', 'u@u.u','inactivo','a21315e8-39e2-43f7-b7ef-71d3d95487cd_280443466_606102284214511_4304388199877668259_n(1).jpg', 'chica', 'chica','$2a$10$yAO7lcrRfVhpPvdvGucVQONwlewtyA.tvQ1zAXPTVjZj.hJ.UMpbm', '98765432');
+INSERT INTO public.usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut) VALUES ('bar', 'a@a.a','inactivo','5b1ab969-8c7d-4a0b-a26b-4ffd24227183_2023-04-01-19_21_55.8080100.jpg','bar' ,'bar' , '$2a$10$g1NiG2AiQpTxg/a8HkvB.ObqopcO1QCk76jywtelrv17BMpulR4F2', '123456');
+
+
+INSERT INTO rol (rol_nombre) VALUES ('ROLE_ADMIN'), ('ROLE_CHICA'), ('ROLE_MESERO'), ('ROLE_BAILARIONA');
+
+
 
 
 INSERT INTO public.usuario_rol(	usuario_id, rol_id)	VALUES (1, 1);
 INSERT INTO public.usuario_rol(	usuario_id, rol_id)	VALUES (2, 3);
 INSERT INTO public.usuario_rol(	usuario_id, rol_id)	VALUES (3, 2);
+INSERT INTO public.usuario_rol(	usuario_id, rol_id)	VALUES (4, 3);
+
+
+
 
 INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', 'efectivo', '---','alcohol','0');
 INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','3800', 'devito', 'trago 20 mil','alcohol','20000');
 INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','5700', 'credito', 'trago 30 mil','bebida','30000');
 INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','7600', 'credito', 'trago 40 mil','bebida','40000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'energetica','bebida','3000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'cerveza','alcohol','3000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'kunstman','alcohol','4000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'bebida','bebida','5000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'tonica','alcohol','5000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'energetica','bebida','5000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'agua mineral','alcohol','5000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'wisky','bebida','10000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'cerveza','bebida','10000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'piscola','alcohol','10000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'ron','bebida','10000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'tequila','bebida','10000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'cocktekles','alcohol','10000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'cigarro','cigarros','10000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'vodska','alcohol','12000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'wisky','alcohol','12000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'nobel','bebida','12000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'jager','bebida','12000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'campary','alcohol','12000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'wisky','bebida','15000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'bayleis','bebida','15000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'wisky_black','alcohol','18000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'sherindans','bebida','18000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'wisky_doble_black','bebida','20000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'wisky','alcohol','30000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'vinos','bebida','50000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'B_pisco_mistral','bebida','60000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'B_pisco_alto_carmen','alcohol','60000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'b_wisky_rojo','bebida','80000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'b_pisco_nobel','bebida','80000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'b_ron','alcohol','80000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'b_jack_daniels','bebida','120000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'b_chivas_regal','bebida','120000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'b_jhonny_waker_negro','alcohol','120000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'b_jager','bebida','120000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'b_vodska_absolut','bebida','120000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'b_jhonny_waker_double_black','alcohol','150000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'jhonny_waker_green_label','bebida','180000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'jhonny_waker_gold_label','bebida','180000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'jack_daniels_gentlenman_jack','alcohol','180000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'jhonny_waker_blue_label','bebida','800000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'champaña_120','bebida','120000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'champaña_160','alcohol','160000');
+INSERT INTO public.trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'champaña_200','bebida','200000');
+
+
 
 INSERT INTO public.horario(estado, horario_entrada, horario_salida) VALUES (1, 'valido', '23:00', '03:00');
 INSERT INTO public.horario(estado, horario_entrada, horario_salida) VALUES (2, 'valido', '22:00', '02:00');
