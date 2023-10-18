@@ -49,7 +49,19 @@ public class Usuario {
     
     private String estado;
     
-    private Date fecha_in;
+    private String nombre_segundo;
+    
+    private String apellido_segundo;
+    
+    private Date fecha_nacimento;
+    
+    private String estado_civil;
+    
+    private String direccion;
+    
+    private String afp;
+    
+    private String fecha_in;
 
     private String tipo_contrato;
     
@@ -64,16 +76,37 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(@NotNull String nombre, @NotNull String nombreUsuario, @NotNull String email, @NotNull String password,@NotNull String tipo,@NotNull String apellido,@NotNull String rut,@NotNull String tipo_contrato) {
+    public Usuario(@NotNull String nombre,
+    		@NotNull String nombreUsuario,
+    		@NotNull String email,
+    		@NotNull String password,
+    		@NotNull String apellido,
+    		@NotNull String rut,
+    		@NotNull String apellido_segundo,
+    		@NotNull Date fecha_nacimento,
+    		@NotNull String estado_civil,
+    		@NotNull String direccion ,
+    		@NotNull String afp,
+    		@NotNull String nombre_segundo,
+    		@NotNull String tipo,
+    		@NotNull String tipo_contrato,
+    		@NotNull String fecha_in) {
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.password = password;
         this.apellido = apellido;
         this.rut = rut;
+        this.apellido_segundo=apellido_segundo;
+        this.fecha_nacimento=fecha_nacimento;
+        this.estado_civil=estado_civil;
+        this.direccion=direccion;
+        this.afp=afp;
+        this.nombre_segundo=nombre_segundo;
         this.tipo = tipo;
         this.tipo_contrato = tipo_contrato;
 
+        this.fecha_in=fecha_in;
     }
 
     
@@ -93,6 +126,8 @@ public class Usuario {
 		this.rut = rut;
 	}
 
+	
+	
 	public Long getId() {
         return id;
     }
@@ -105,7 +140,56 @@ public class Usuario {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    
+    public String getNombre_segundo() {
+		return nombre_segundo;
+	}
+
+	public void setNombre_segundo(String nombre_segundo) {
+		this.nombre_segundo = nombre_segundo;
+	}
+
+	public String getApellido_segundo() {
+		return apellido_segundo;
+	}
+
+	public void setApellido_segundo(String apellido_segundo) {
+		this.apellido_segundo = apellido_segundo;
+	}
+
+	public Date getFecha_nacimento() {
+		return fecha_nacimento;
+	}
+
+	public void setFecha_nacimento(Date fecha_nacimento) {
+		this.fecha_nacimento = fecha_nacimento;
+	}
+
+	public String getEstado_civil() {
+		return estado_civil;
+	}
+
+	public void setEstado_civil(String estado_civil) {
+		this.estado_civil = estado_civil;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getAfp() {
+		return afp;
+	}
+
+	public void setAfp(String afp) {
+		this.afp = afp;
+	}
+
+	public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -166,11 +250,11 @@ public class Usuario {
 		this.estado = estado;
 	}
 
-	public Date getFecha_in() {
+	public String getFecha_in() {
 		return fecha_in;
 	}
 
-	public void setFecha_in(Date fecha_in) {
+	public void setFecha_in(String fecha_in) {
 		this.fecha_in = fecha_in;
 	}
 

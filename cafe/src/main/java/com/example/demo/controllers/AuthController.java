@@ -61,8 +61,22 @@ public class AuthController {
         if(usuarioService.existePorEmail(nuevoUsuario.getEmail()))
             return new ResponseEntity(new Mensaje("ese email ya existe"), HttpStatus.BAD_REQUEST);
         Usuario usuario =
-                new Usuario(nuevoUsuario.getNombre(), nuevoUsuario.getNombreUsuario(), nuevoUsuario.getEmail(),
-                        passwordEncoder.encode(nuevoUsuario.getPassword()), nuevoUsuario.getApellido(),nuevoUsuario.getRut(),nuevoUsuario.getTipo(), null);
+                new Usuario(nuevoUsuario.getNombre(), 
+                		nuevoUsuario.getNombreUsuario(),
+                		nuevoUsuario.getEmail(),
+                		passwordEncoder.encode(nuevoUsuario.getPassword()),
+                		nuevoUsuario.getApellido(),
+                		nuevoUsuario.getRut(),
+                		nuevoUsuario.getApellido_segundo(),
+                		nuevoUsuario.getFecha_nacimento(),
+                		nuevoUsuario.getEstado_civil(),
+                		nuevoUsuario.getDireccion(),
+                		nuevoUsuario.getAfp(),
+                		nuevoUsuario.getNombre_segundo(),
+                		nuevoUsuario.getTipo(),
+                		nuevoUsuario.getTipo_contrato(),
+                		nuevoUsuario.getFecha_in());
+        
         Set<String> rolesStr = nuevoUsuario.getRoles();
         Set<Rol> roles = new HashSet<>();
         for (String rol : rolesStr) {

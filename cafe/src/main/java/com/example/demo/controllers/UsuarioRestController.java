@@ -153,6 +153,13 @@ public class UsuarioRestController {
 			usuarioActual.setTipo_contrato(usuario.getTipo_contrato());
 			usuarioActual.setEstado(usuario.getEstado());
 			usuarioActual.setColor(usuario.getColor());
+			usuarioActual.setNombre_segundo(usuario.getNombre_segundo());
+			usuarioActual.setApellido_segundo(usuario.getApellido_segundo());
+			usuarioActual.setDireccion(usuario.getDireccion());
+			usuarioActual.setAfp(usuario.getAfp());
+			usuarioActual.setEstado_civil(usuario.getEstado_civil());
+			usuarioActual.setFecha_nacimento(usuario.getFecha_nacimento());
+			
 
 			usuarioUpdate = usuarioService.save(usuarioActual);
 
