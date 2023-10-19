@@ -371,7 +371,7 @@ public class AccionesRestController {
 		return new ResponseEntity<List<Object>>(accion, HttpStatus.OK);
 	}
 	
-	@GetMapping("/usuario/nombreusuarioid/{user}")
+	@GetMapping("/nombreusuarioid/{user}")
 	public ResponseEntity<?> nombreusuarioid(@PathVariable String user)throws ParseException {
 
 		List<Object> accion = null;
@@ -379,6 +379,7 @@ public class AccionesRestController {
 			System.out.println(user);
 		try {
 			accion = accionesService.nombreusuarioid(user);
+			System.out.println(user);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al realizar la consulta en la base de datos");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));

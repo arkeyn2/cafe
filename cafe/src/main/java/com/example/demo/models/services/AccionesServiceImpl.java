@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.dao.IAccionesDao;
 import com.example.demo.models.entity.Acciones;
+import com.example.demo.models.entity.Usuario;
 
 @Service
 public class AccionesServiceImpl implements IAccionesService {

@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.example.demo.models.entity.Acciones;
+import com.example.demo.models.entity.Usuario;
 
 public interface IAccionesService {
 	

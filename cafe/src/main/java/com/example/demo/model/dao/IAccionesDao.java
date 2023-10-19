@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.example.demo.models.entity.Acciones;
+import com.example.demo.models.entity.Usuario;
 
 
 public interface IAccionesDao extends CrudRepository<Acciones, Long>{

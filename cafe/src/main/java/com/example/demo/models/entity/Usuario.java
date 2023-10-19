@@ -34,7 +34,8 @@ public class Usuario {
     private String rut;
     
     @NotNull
-    @Column(unique = true)
+    //@Column(unique = true)
+    @Column(name = "nombreUsuario")
     private String nombreUsuario;
 
     @NotNull
@@ -66,6 +67,8 @@ public class Usuario {
     private String tipo_contrato;
     
     private String color;
+    
+    
     
     private String foto;
     @NotNull

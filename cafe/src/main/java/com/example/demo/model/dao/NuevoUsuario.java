@@ -21,6 +21,7 @@ public class NuevoUsuario {
     private String tipo;    
     private String fecha_in;    
     private String Tipo_contrato;
+
     public String getNombre() {
         return nombre;
     }
