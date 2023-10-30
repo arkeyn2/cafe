@@ -53,6 +53,10 @@ public interface IAccionesDao extends CrudRepository<Acciones, Long>{
 	@Query("select us from Usuario us where us.nombreUsuario=?1")
 	public List<Object> nombreusuarioid(String id);
 	
+	@Query("select ac from Acciones ac inner join Clientes c on c.id=ac.cliente.id where c.id =?1")
+	public List<Object> pagoclientependienteypago(Long id);
+	
+	
 	/*
 	select sum(ac.caja) as caja,sum(ac.comisiones) as comisiones,sum(total_ganado) as total_ganado,sum(tra.iva) as iva_trago,sum(tra.valor_trago) as valor_trago,sum(se.iva) as iva_servicio,sum(se.valor) as valor_servicio from Acciones ac inner join Tragos tra on ac.tragos.id=tra.id inner join Servicios se on se.id=ac.servicio.id where ac.fecha_dia Between ?1 and ?2
 	select sum(ac.caja)as caja,sum(ac.comisiones) as gcomisiones,

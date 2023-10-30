@@ -83,4 +83,9 @@ public class AccionesServiceImpl implements IAccionesService {
 	public List<Object> nombreusuarioid(String id) {
 		return accionDao.nombreusuarioid(id);
 	}
+	
+	public List<Object> pagoclientependienteypago(Long id) {
+		return accionDao.pagoclientependienteypago(id);
+	}
+	
 }

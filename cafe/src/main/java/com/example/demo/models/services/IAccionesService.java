@@ -36,5 +36,7 @@ public interface IAccionesService {
 	
 	public List<Object> nombreusuarioid(String id); 
 	
+	public List<Object> pagoclientependienteypago(Long id);
+	
 }
 
