@@ -1,8 +1,8 @@
-INSERT INTO usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut,tipo) VALUES ('alexis', 'a@a.a','inactivo','5b1ab969-8c7d-4a0b-a26b-4ffd24227183_2023-04-01-19_21_55.8080100.jpg','alexis' ,'alexis' , '$2a$10$g1NiG2AiQpTxg/a8HkvB.ObqopcO1QCk76jywtelrv17BMpulR4F2', '123456','anfritriona');
+INSERT INTO usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut,tipo) VALUES ('alexis', 'a@a.a','inactivo','5b1ab969-8c7d-4a0b-a26b-4ffd24227183_2023-04-01-19_21_55.8080100.jpg','alexis' ,'alexis' , '$2a$10$g1NiG2AiQpTxg/a8HkvB.ObqopcO1QCk76jywtelrv17BMpulR4F2', '123456','admin');
 	
-INSERT INTO usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut,tipo) VALUES ('mesero', 's@s.s','inactivo','869182d4-a988-426a-9269-38994c869d96_sona_lingerie_by_lifeisafiction_dfcy0nv-fullview.jpg', 'mesero', 'mesero', '$2a$10$1LBaC082dl.Y.WTZpyRoNesxNi/uxtqRXq.1NufvNHyAO2sNnCYJy', '1234569','bailarina');
+INSERT INTO usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut,tipo) VALUES ('mesero', 's@s.s','inactivo','869182d4-a988-426a-9269-38994c869d96_sona_lingerie_by_lifeisafiction_dfcy0nv-fullview.jpg', 'mesero', 'mesero', '$2a$10$1LBaC082dl.Y.WTZpyRoNesxNi/uxtqRXq.1NufvNHyAO2sNnCYJy', '1234569','garzon');
 	
-INSERT INTO usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut) VALUES ('chica', 'u@u.u','inactivo','a21315e8-39e2-43f7-b7ef-71d3d95487cd_280443466_606102284214511_4304388199877668259_n(1).jpg', 'chica', 'chica','$2a$10$yAO7lcrRfVhpPvdvGucVQONwlewtyA.tvQ1zAXPTVjZj.hJ.UMpbm', '98765432');
+INSERT INTO usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut) VALUES ('chica', 'u@u.u','inactivo','a21315e8-39e2-43f7-b7ef-71d3d95487cd_280443466_606102284214511_4304388199877668259_n(1).jpg', 'chica', 'chica','$2a$10$yAO7lcrRfVhpPvdvGucVQONwlewtyA.tvQ1zAXPTVjZj.hJ.UMpbm', '98765432','anfritriona');
 INSERT INTO usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut) VALUES ('bar', 'a@a.a','inactivo','5b1ab969-8c7d-4a0b-a26b-4ffd24227183_2023-04-01-19_21_55.8080100.jpg','bar' ,'bar' , '$2a$10$g1NiG2AiQpTxg/a8HkvB.ObqopcO1QCk76jywtelrv17BMpulR4F2', '123456');
 
 

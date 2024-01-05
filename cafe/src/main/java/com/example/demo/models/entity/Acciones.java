@@ -27,6 +27,8 @@ public class Acciones implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
+	private boolean checked=false;
+
 	private String fecha_dia;
 
 	private Date fecha_trago;
@@ -79,6 +81,14 @@ public class Acciones implements Serializable {
 
 	public long getId() {
 		return id;
+	}
+
+	public boolean isChecked() {
+		return checked;
+	}
+
+	public void setChecked(boolean checked) {
+		this.checked = checked;
 	}
 
 	public void setId(long id) {
