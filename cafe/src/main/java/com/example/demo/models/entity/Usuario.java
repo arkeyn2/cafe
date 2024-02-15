@@ -68,6 +68,7 @@ public class Usuario {
     
     private String color;
     
+	private Long imposiciones;
     
     
     private String foto;
@@ -93,7 +94,9 @@ public class Usuario {
     		@NotNull String nombre_segundo,
     		@NotNull String tipo,
     		@NotNull String tipo_contrato,
-    		@NotNull String fecha_in) {
+    		@NotNull String fecha_in,
+			@NotNull Long imposiciones
+			) {
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
         this.email = email;
@@ -110,6 +113,7 @@ public class Usuario {
         this.tipo_contrato = tipo_contrato;
 
         this.fecha_in=fecha_in;
+		this.imposiciones = imposiciones;
     }
 
     
@@ -275,6 +279,14 @@ public class Usuario {
 
 	public void setFoto(String foto) {
 		this.foto = foto;
+	}
+
+	public Long getImposiciones() {
+		return imposiciones;
+	}
+
+	public void setImposiciones(Long imposiciones) {
+		this.imposiciones = imposiciones;
 	}
 
 	

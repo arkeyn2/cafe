@@ -75,7 +75,10 @@ public class AuthController {
                 		nuevoUsuario.getNombre_segundo(),
                 		nuevoUsuario.getTipo(),
                 		nuevoUsuario.getTipo_contrato(),
-                		nuevoUsuario.getFecha_in());
+                		nuevoUsuario.getFecha_in(),
+                        nuevoUsuario.getImposiciones()
+                        );
+                        
         
         Set<String> rolesStr = nuevoUsuario.getRoles();
         Set<Rol> roles = new HashSet<>();

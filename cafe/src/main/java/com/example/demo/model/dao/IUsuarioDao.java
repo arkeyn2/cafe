@@ -14,4 +14,8 @@ public interface IUsuarioDao extends CrudRepository<Usuario, Long>{
 	@Query("select usu from Usuario usu where usu.tipo=?1")
 	public List<Usuario> findTraeChica(String tipo);
 
+	@Query("update Usuario set usuario_color=?1 where usuario_id=?2")
+	public List<Usuario> ids(String color, Long id);
+
 }
+

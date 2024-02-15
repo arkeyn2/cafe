@@ -55,6 +55,11 @@ public class Acciones implements Serializable {
 	
 	private String tipo_pago;
 
+	private int cantidad;
+
+	private int propina;
+
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Servicios servicio;
@@ -235,6 +240,23 @@ public class Acciones implements Serializable {
 
 
 
-
 	private static final long serialVersionUID = 1L;
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	public int getPropina() {
+		return propina;
+	}
+
+	public void setPropina(int propina) {
+		this.propina = propina;
+	}
+
+
 }

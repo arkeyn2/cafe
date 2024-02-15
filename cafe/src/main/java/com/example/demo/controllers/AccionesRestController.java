@@ -112,7 +112,10 @@ public class AccionesRestController {
 			accionesActual.setComisiones(acciones.getComisiones());
 			accionesActual.setDia_activo(acciones.getDia_activo());
 			accionesActual.setBonificacion(acciones.getBonificacion());
-			
+			accionesActual.setCantidad(acciones.getCantidad());
+			accionesActual.setPropina(acciones.getPropina());
+		
+
 			accionesUpdate = accionesService.save(accionesActual);
 
 		} catch (DataAccessException e) {

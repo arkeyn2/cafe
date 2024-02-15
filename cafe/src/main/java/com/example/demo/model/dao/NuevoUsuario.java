@@ -21,6 +21,7 @@ public class NuevoUsuario {
     private String tipo;    
     private String fecha_in;    
     private String Tipo_contrato;
+	private Long imposiciones;
 
     public String getNombre() {
         return nombre;
@@ -149,6 +150,15 @@ public class NuevoUsuario {
 	public void setTipo_contrato(String tipo_contrato) {
 		Tipo_contrato = tipo_contrato;
 	}
+
+	public Long getImposiciones() {
+		return imposiciones;
+	}
+
+	public void setImposiciones(Long imposiciones) {
+		this.imposiciones = imposiciones;
+	}
+	
 	
 	
 }

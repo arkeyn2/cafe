@@ -1,5 +1,6 @@
 package com.example.demo.models.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.exceptions.InvalidFieldException;
 import com.example.demo.model.dao.IUsuarioDao;
 import com.example.demo.model.dao.UsuarioRepository;
 import com.example.demo.models.entity.Usuario;
@@ -44,12 +46,19 @@ public class UsuarioService implements IUsuarioService{
         usuarioRepository.save(usuario);
     }
 
+	public Usuario findEntitiesByIds(List<Long> ids) {
+        return (Usuario) usuarioRepository.findAllById(ids);
+    }
+
 	@Override
 	public Usuario findById(Long id) {
 		return usuarioDao.findById(id).orElse(null);
 	}
 	
-	
+	public void updateEntity(Usuario usuario) {
+        // Aquí podrías tener la lógica necesaria para validar y actualizar la entidad en la base de datos
+        usuarioRepository.save(usuario);
+    }
 
 	@Override
 	public Usuario save(Usuario usuario) {
@@ -77,5 +86,24 @@ public class UsuarioService implements IUsuarioService{
 		return null;
 	}
 
+	@Override
+	public Usuario save(List<Long> ids) {
+		return (Usuario) usuarioRepository.findAllById(ids);
+	}
+
+	@Override
+	public void actualizacionMasiva(String ids) {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'actualizacionMasiva'");
+	}
+
+
+
+	
+	public List<Usuario> ids(String color,Long id) {
+		return usuarioDao.ids(color,id);
+	}
+
+	
     
 }
