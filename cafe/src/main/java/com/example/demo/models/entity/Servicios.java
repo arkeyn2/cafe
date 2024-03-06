@@ -32,6 +32,11 @@ public class Servicios implements Serializable {
 
 	private int iva;
 	
+	private int pago_electrónico;
+	private int transferencia;
+	private int billete;
+	
+	
 	private String pieza;
 
 	public Long getId() {
@@ -102,6 +107,30 @@ public class Servicios implements Serializable {
 		this.iva = iva;
 	}
 	
+
+	public int getPago_electrónico() {
+		return pago_electrónico;
+	}
+
+	public void setPago_electrónico(int pago_electrónico) {
+		this.pago_electrónico = pago_electrónico;
+	}
+
+	public int getTransferencia() {
+		return transferencia;
+	}
+
+	public void setTransferencia(int transferencia) {
+		this.transferencia = transferencia;
+	}
+
+	public int getBillete() {
+		return billete;
+	}
+
+	public void setBillete(int billete) {
+		this.billete = billete;
+	}
 
 	public String getPieza() {
 		return pieza;

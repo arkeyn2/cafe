@@ -58,6 +58,8 @@ public class Acciones implements Serializable {
 	private int cantidad;
 
 	private int propina;
+	
+
 
 
 	@ManyToOne(fetch = FetchType.EAGER)

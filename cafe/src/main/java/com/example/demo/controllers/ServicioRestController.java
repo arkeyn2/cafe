@@ -22,19 +22,19 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.models.entity.Servicios;
 import com.example.demo.models.services.IServiciosService;
 
-@CrossOrigin(origins = { "http://localhost:4200","*" })
+@CrossOrigin(origins = { "http://localhost:4200", "*" })
 @RestController
 @RequestMapping("/api")
 public class ServicioRestController {
 
 	@Autowired
 	private IServiciosService servicioService;
-	
+
 	@GetMapping("/servicios")
 	public List<Servicios> index() {
 		return servicioService.findAll();
 	}
-	
+
 	@GetMapping("/servicios/{id}")
 	public ResponseEntity<?> show(@PathVariable Long id) {
 
@@ -56,7 +56,7 @@ public class ServicioRestController {
 		return new ResponseEntity<Servicios>(servicio, HttpStatus.OK);
 
 	}
-	
+
 	@PostMapping("/servicios")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<?> create(@RequestBody Servicios servicio) {
@@ -76,7 +76,7 @@ public class ServicioRestController {
 		response.put("sala", servicionew);
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
-	
+
 	@PutMapping("/servicios/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<?> update(@RequestBody Servicios servicio, @PathVariable Long id) {
@@ -102,6 +102,9 @@ public class ServicioRestController {
 			servicioActual.setValor(servicio.getValor());
 			servicioActual.setIva(servicio.getIva());
 			servicioActual.setPieza(servicio.getPieza());
+			servicioActual.setPago_electrónico(servicio.getPago_electrónico());
+			servicioActual.setTransferencia(servicio.getTransferencia());
+			servicioActual.setBillete(servicio.getBillete());
 
 			servicioUpdate = servicioService.save(servicioActual);
 
@@ -114,7 +117,7 @@ public class ServicioRestController {
 		response.put("servicio", servicioUpdate);
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
-	
+
 	@DeleteMapping("/servicios/{id}")
 	public ResponseEntity<?> delete(@PathVariable Long id) {
 		Map<String, Object> response = new HashMap<>();
