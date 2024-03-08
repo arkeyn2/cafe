@@ -285,6 +285,27 @@ public class AccionesRestController {
 		return new ResponseEntity<List<Object>>(accion, HttpStatus.OK);
 	}
 	
+	@GetMapping("/acciones/cierrecajadatos/{fecha1}/{fecha2}")
+	public ResponseEntity<?> cierrecajadatos(@PathVariable String fecha1,@PathVariable String fecha2)throws ParseException {
+
+		List<Object> accion = null;
+		Map<String, Object> response = new HashMap<>();
+
+		try {
+			accion = accionesService.cierrecajadatos(fecha1,fecha1);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar la consulta en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+
+		if (accion == null) {
+			response.put("mensaje", "La accion Id:".concat(fecha1.toString().concat(" no existe en la base de datos!")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<List<Object>>(accion, HttpStatus.OK);
+	}
+	
 	@GetMapping("/acciones/cierrecaja/id/{fecha1}/{fecha2}/{id}")
 	public ResponseEntity<?> cierrecajaid(@PathVariable String fecha1,@PathVariable String fecha2,@PathVariable Long id)throws ParseException {
 

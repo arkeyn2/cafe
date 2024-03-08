@@ -63,6 +63,10 @@ public class AccionesServiceImpl implements IAccionesService {
 		return accionDao.cierrecaja(fecha1,fecha2);
 	}
 	
+	public List<Object> cierrecajadatos(String fecha1 , String fecha2) {
+		return accionDao.cierrecajadatos(fecha1,fecha2);
+	}
+	
 	public List<Object> cierrecajaid(String fecha1 , String fecha2,Long idu) {
 		return accionDao.cierrecajaid(fecha1,fecha2,idu);
 	}

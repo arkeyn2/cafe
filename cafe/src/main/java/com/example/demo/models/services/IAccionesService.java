@@ -26,6 +26,8 @@ public interface IAccionesService {
 	
 	public List<Object> cierrecaja(String fecha1,String fecha2); 
 	
+	public List<Object> cierrecajadatos(String fecha1,String fecha2); 
+	
 	public List<Object> cierrecajaid(String fecha1,String fecha2,Long idu); 
 	
 	public List<Acciones> fechainformesid(String fecha1,String fecha2,Long id); 

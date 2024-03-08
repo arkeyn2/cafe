@@ -38,6 +38,10 @@ public interface IAccionesDao extends CrudRepository<Acciones, Long>{
 	public List<Object> cierrecaja(String fecha1 ,String fecha2);
 	
 	@Modifying
+	@Query("select ac from Acciones ac inner join Tragos tra on ac.tragos.id=tra.id inner join Servicios se on se.id=ac.servicio.id where ac.dia_activo Between ?1 and ?2 and ac.estado='pagado'")
+	public List<Object> cierrecajadatos(String fecha1 ,String fecha2);
+	
+	@Modifying
 	@Query("select sum(ac.caja) as caja,sum(ac.comisiones) as comisiones,sum(ac.total_ganado) as total_ganado,sum(tra.iva) as iva_trago,sum(tra.valor_trago) as valor_trago,sum(se.iva) as iva_servicio,sum(se.valor) as valor_servicio,sum(ac.adelanto)as adelanto from Acciones ac inner join Tragos tra on ac.tragos.id=tra.id inner join Servicios se on se.id=ac.servicio.id inner join Usuario u on u.id=ac.usuario.id where u.id =?3 and ac.dia_activo Between ?1 and ?2 and ac.estado='pagado'")
 	public List<Object> cierrecajaid(String fecha1 ,String fecha2,Long idu);
 	
