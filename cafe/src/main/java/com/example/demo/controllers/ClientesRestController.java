@@ -95,9 +95,9 @@ public class ClientesRestController {
 
 		try {
 
-			clienteActual.setNombre_cliente(cliente.getNombre_cliente());
+			
 			clienteActual.setEstado(cliente.getEstado());
-		
+			clientesUpdate = clienteservice.save(clientesUpdate);
 
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al realizar actualizado en la base de datos");

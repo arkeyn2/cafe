@@ -2,8 +2,8 @@ INSERT INTO usuario(apellido, email,estado ,foto, nombre, nombre_usuario, passwo
 	
 INSERT INTO usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut,tipo) VALUES ('mesero', 's@s.s','inactivo','869182d4-a988-426a-9269-38994c869d96_sona_lingerie_by_lifeisafiction_dfcy0nv-fullview.jpg', 'mesero', 'mesero', '$2a$10$1LBaC082dl.Y.WTZpyRoNesxNi/uxtqRXq.1NufvNHyAO2sNnCYJy', '1234569','garzon');
 	
-INSERT INTO usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut) VALUES ('chica', 'u@u.u','inactivo','a21315e8-39e2-43f7-b7ef-71d3d95487cd_280443466_606102284214511_4304388199877668259_n(1).jpg', 'chica', 'chica','$2a$10$yAO7lcrRfVhpPvdvGucVQONwlewtyA.tvQ1zAXPTVjZj.hJ.UMpbm', '98765432','anfritriona');
-INSERT INTO usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut) VALUES ('bar', 'a@a.a','inactivo','5b1ab969-8c7d-4a0b-a26b-4ffd24227183_2023-04-01-19_21_55.8080100.jpg','bar' ,'bar' , '$2a$10$g1NiG2AiQpTxg/a8HkvB.ObqopcO1QCk76jywtelrv17BMpulR4F2', '123456');
+INSERT INTO usuario(apellido, email,estado ,foto, nombre, nombre_usuario, password, rut,tipo) VALUES ('chica', 'u@u.u','inactivo','a21315e8-39e2-43f7-b7ef-71d3d95487cd_280443466_606102284214511_4304388199877668259_n(1).jpg', 'chica', 'chica','$2a$10$yAO7lcrRfVhpPvdvGucVQONwlewtyA.tvQ1zAXPTVjZj.hJ.UMpbm', '98765432','anfritriona');
+
 
 
 INSERT INTO rol (rol_nombre) VALUES ('ROLE_ADMIN'), ('ROLE_CHICA'), ('ROLE_MESERO'), ('ROLE_BAILARIONA');
@@ -67,7 +67,7 @@ INSERT INTO trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valo
 INSERT INTO trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'champaña_120','bebida','120000');
 INSERT INTO trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'champaña_160','alcohol','160000');
 INSERT INTO trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'champaña_200','bebida','200000');
-
+INSERT INTO trago(estado_trago, iva, metodo_pago, nombre_trago, tipo_trago, valor_trago)	VALUES ('valido','0', '', 'champaña_240','bebida','240000');
 
 
 INSERT INTO horario(estado, horario_entrada, horario_salida) VALUES (1, 'valido', '23:00', '03:00');
@@ -83,7 +83,11 @@ INSERT INTO control(fecha, usuario_id)	VALUES ('2023-07-07', 1);
 INSERT INTO servicios(detalle_servicio, estado_servicio, iva, metodo_pago, nombre_servicio, pieza, tipo_servicio, valor)	VALUES ('perro', 'activo', 0, 'efe', '---', 's', 'sad', 0);
 INSERT INTO servicios(detalle_servicio, estado_servicio, iva, metodo_pago, nombre_servicio, pieza, tipo_servicio, valor)	VALUES ('perro', 'activo', 1000, 'efe', 'asd', 's', 'sad', 1000);
 
-INSERT INTO acciones(adelanto, caja, comisiones, dia_activo, estado, estado_de_pago, fecha_dia, pendiente, tipo_accion, total_ganado, servicio_id, tragos_id, usuario_id) VALUES ( 10000, 0, 0, '2023-07-24', 'pagado', 'p', '2023-07-24', 's', 's', 0, 1, 2, 1);
-INSERT INTO acciones(adelanto, caja, comisiones, dia_activo, estado, estado_de_pago, fecha_dia, pendiente, tipo_accion, total_ganado, servicio_id, tragos_id, usuario_id) VALUES ( 5000, 0, 0, '2023-07-24', 'pagado', 'p', '2023-07-24', 's', 's', 0, 1, 2, 1);
+INSERT INTO acciones(adelanto, caja, comisiones, dia_activo, estado, estado_de_pago, fecha_dia, pendiente, tipo_accion,  servicio_id, tragos_id, usuario_id) VALUES ( 10000, 0, 0, '2023-07-24', 'pagado', 'p', '2023-07-24', 's', 's', 1, 2, 1);
+INSERT INTO acciones(adelanto, caja, comisiones, dia_activo, estado, estado_de_pago, fecha_dia, pendiente, tipo_accion,  servicio_id, tragos_id, usuario_id) VALUES ( 5000, 0, 0, '2023-07-24', 'pagado', 'p', '2023-07-24', 's', 's', 1, 2, 1);
 INSERT INTO total_dia(fechadia,ingreso_caja,total) VALUES ('2023-05-17',1000,1000);
 insert into clientes(nombre_cliente)values('seleccione');
+
+insert into garzon(estado,nombre_garzon) values ('activo','bryan');
+insert into garzon(estado,nombre_garzon) values ('activo','miguel');
+INSERT INTO usuario(id,apellido, email,estado ,foto, nombre, nombre_usuario, rut) VALUES (4,'bar', 'a@a.a','inactivo','5b1ab969-8c7d-4a0b-a26b-4ffd24227183_2023-04-01-19_21_55.8080100.jpg','bar' ,'bar' , '123456');

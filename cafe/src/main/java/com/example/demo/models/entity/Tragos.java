@@ -32,6 +32,7 @@ public class Tragos implements Serializable {
 	
 	private String metodo_pago;
 
+	
 	public long getId() {
 		return id;
 	}
