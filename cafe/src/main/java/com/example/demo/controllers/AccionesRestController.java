@@ -438,4 +438,32 @@ public class AccionesRestController {
 		return new ResponseEntity<List<Object>>(accion, HttpStatus.OK);
 	}
 
+	@GetMapping("/acciones/informeDiario/{fecha1}/{fecha2}")
+	public ResponseEntity<?> fechaDiarias(@PathVariable String fecha1,@PathVariable String fecha2)throws ParseException {
+
+		List<Acciones> accion = null;
+		Map<String, Object> response = new HashMap<>();
+		/*SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		Date date = simpleDateFormat.parse(fecha1);
+		SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("dd-MM-yyyy");
+		Date date2 = simpleDateFormat2.parse(fecha2);
+*/      System.out.println(fecha1+" entro");
+		System.out.println(fecha2);
+		try {
+			accion = accionesService.fechasDiarias(fecha1,fecha2);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar la consulta en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+
+		if (accion == null) {
+			response.put("mensaje", "La accion Id:".concat(fecha1.toString().concat(" no existe en la base de datos!")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<List<Acciones>>(accion, HttpStatus.OK);
+	}
+	
+
+
 }

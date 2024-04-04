@@ -40,5 +40,6 @@ public interface IAccionesService {
 	
 	public List<Object> pagoclientependienteypago(Long id);
 	
+	public List<Acciones> fechasDiarias(String fecha1,String fecha2);
 }
 

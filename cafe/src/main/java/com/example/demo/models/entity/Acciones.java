@@ -2,8 +2,6 @@ package com.example.demo.models.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,12 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -59,6 +52,9 @@ public class Acciones implements Serializable {
 
 	private int propina;
 	
+	private String pieza;
+
+	private int iva;
 
 
 
@@ -77,6 +73,11 @@ public class Acciones implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Tragos tragos;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	private Garzon garzon;
+
 
 	public String getDia_activo() {
 		return dia_activo;
@@ -260,5 +261,30 @@ public class Acciones implements Serializable {
 		this.propina = propina;
 	}
 
+	public String getPieza() {
+		return pieza;
+	}
+
+	public void setPieza(String pieza) {
+		this.pieza = pieza;
+	}
+
+	public int getIva() {
+		return iva;
+	}
+
+	public void setIva(int iva) {
+		this.iva = iva;
+	}
+
+	public Garzon getGarzon() {
+		return garzon;
+	}
+
+	public void setGarzon(Garzon garzon) {
+		this.garzon = garzon;
+	}
+
+	
 
 }

@@ -91,5 +91,10 @@ public class AccionesServiceImpl implements IAccionesService {
 	public List<Object> pagoclientependienteypago(Long id) {
 		return accionDao.pagoclientependienteypago(id);
 	}
+
+	@Override
+	public List<Acciones> fechasDiarias(String fecha1, String fecha2) {
+		return accionDao.fechasDiarias(fecha1, fecha2);
+	}
 	
 }
