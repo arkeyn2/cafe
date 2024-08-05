@@ -7,7 +7,8 @@ public class NuevoUsuario {
     
     private String nombre;
     private String email;
-    private String apellido;    
+    private String apellido;
+	private int timer;    
     private String rut;
     private String nombreUsuario;
     private String nombre_segundo;    
@@ -157,6 +158,14 @@ public class NuevoUsuario {
 
 	public void setImposiciones(Long imposiciones) {
 		this.imposiciones = imposiciones;
+	}
+
+	public int getTimer() {
+		return timer;
+	}
+
+	public void setTimer(int timer) {
+		this.timer = timer;
 	}
 	
 	

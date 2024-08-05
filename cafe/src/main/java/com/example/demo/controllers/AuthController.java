@@ -66,6 +66,7 @@ public class AuthController {
                 		nuevoUsuario.getEmail(),
                 		passwordEncoder.encode(nuevoUsuario.getPassword()),
                 		nuevoUsuario.getApellido(),
+                        nuevoUsuario.getTimer(),
                 		nuevoUsuario.getRut(),
                 		nuevoUsuario.getApellido_segundo(),
                 		nuevoUsuario.getFecha_nacimento(),

@@ -30,6 +30,8 @@ public class Usuario {
     @NotNull
     private String apellido;
     
+	private int timer; 
+
     @NotNull
     private String rut;
     
@@ -61,6 +63,8 @@ public class Usuario {
     private String direccion;
     
     private String afp;
+
+
     
     private String fecha_in;
 
@@ -85,6 +89,7 @@ public class Usuario {
     		@NotNull String email,
     		@NotNull String password,
     		@NotNull String apellido,
+			@NotNull int timer,
     		@NotNull String rut,
     		@NotNull String apellido_segundo,
     		@NotNull Date fecha_nacimento,
@@ -102,6 +107,7 @@ public class Usuario {
         this.email = email;
         this.password = password;
         this.apellido = apellido;
+		this.timer = timer;
         this.rut = rut;
         this.apellido_segundo=apellido_segundo;
         this.fecha_nacimento=fecha_nacimento;
